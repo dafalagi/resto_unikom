@@ -2,7 +2,7 @@
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css">
-    <link rel="stylesheet" href="./assets/styles/beranda.css">
+    <link rel="stylesheet" href="./assets/styles/pilihmenu.css">
 </head>
     <body class="sb-nav-fixed">
         
@@ -11,11 +11,54 @@
             include_once('components/sidenav.php');
         ?>
 
-<div class="d-flex flex-column bd-highlight mb-3">
-  <div class="p-2 bd-highlight">Flex item 1</div>
-  <div class="p-2 bd-highlight">Flex item 2</div>
-  <div class="p-2 bd-highlight">Flex item 3</div>
-</div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                      
+
+                        <!-- tabel -->
+                        <table class="table table-hover table-dark">
+                            <thead>
+                                <tr class="namacolom">
+                                <th colspan="4" scope="col">Deskripsi Menu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th scope="row">1</th>
+                                <td><img src="assets/img/thumb/thumb-bebekbakar.jpg" alt=""></td>
+                                <td> 
+                                    <p> Bebek Bakar<br> 
+                                        Bebek Bakar dengan bumbu cabe yang membara siap menggempur bibir anda
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="d-grid gap-2 col-3">
+                                        <button class="btn btn-primary" type="button">Pilih</button>
+                                        <button class="btn btn-secondary" type="button">Batal</button>
+                                    </div>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- pagination -->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </main>
+            </div>
+        </div>
 
         <?php 
             include_once('layouts/scripts.php');
