@@ -15,27 +15,27 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">Pilih Menu</a>
-                                    <a class="nav-link" href="#">Pilih Meja</a>
+                                    <a class="nav-link" href="home.php?nav=pilihmenu">Pilih Menu</a>
+                                    <a class="nav-link" href="home.php?nav=pilihmeja">Pilih Meja</a>
                                 </nav>
                             </div>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="home.php?nav=kelolamenu">
                                 <div class="sb-nav-link-icon"></div>
                                 Kelola Menu
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="home.php?nav=konfirmasi">
                                 <div class="sb-nav-link-icon"></div>
                                 Konfirmasi Pesanan
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="home.php?nav=status">
                                 <div class="sb-nav-link-icon"></div>
                                 Status Pesanan
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="home.php?nav=pembayaran">
                                 <div class="sb-nav-link-icon"></div>
                                 Pembayaran
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="home.php?nav=buatlaporan">
                                 <div class="sb-nav-link-icon"></div>
                                 Buat Laporan
                             </a>
