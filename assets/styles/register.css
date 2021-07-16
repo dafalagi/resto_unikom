@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+.my-4{
+    font-family: 'Poppins', sans-serif;
+}
+.btn{
+    font-family: 'Poppins', sans-serif; 
+}
+.container{
+    padding-top: 80px;
+}
+.small{
+    font-family: 'Poppins', sans-serif;   
+}
+.form-control{
+    font-family: 'Poppins', sans-serif; 
+}
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url("../img/log-reg-pass.jpg");
+}
