@@ -34,8 +34,8 @@
                 </td>
                 <td>
                     <div class="d-grid gap-2 col-2">
-                        <button class="btn btn-primary" type="button">Dibuat</button>
-                        <button class="btn btn-secondary" type="button">Selesai</button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstatus">Dibuat</button>
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalselesai">Selesai</button>
                     </div>
                 </td>
             </tr>
@@ -50,15 +50,16 @@
                 </td>
                 <td>
                     <div class="d-grid gap-2 col-2">
-                        <button class="btn btn-primary" type="button">Dibuat</button>
-                        <button class="btn btn-secondary" type="button">Selesai</button>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstatus">Dibuat</button>
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalselesai">Selesai</button>
                     </div>
                 </td>
             </tr>
         </tbody>
 </table>
-
+<a class="btn btn-secondary" href="#" role="button">Kembali</a>
         <?php 
+            include_once('components/modal/modalstatuspesanan.php'); 
             include_once('layouts/scripts.php');
             include_once('layouts/end.php')
         ?>
