@@ -20,19 +20,10 @@ body {
   vertical-align: middle;
   color: #fcfcfc;
 }
-.namacolom {
-  text-align: center;
+.card-header{
+    font-family: "Poppins", sans-serif;
 }
-
-.pagination li a {
-  background-color: #292b2c;
-  color: #fcfcfc;
-  border-color: #292b2c;
-}
-.tambah{
-    border-color: #443f3f;
-}
-.search1{
-  position: absolute;
+.form-label{
+    font-family: "Poppins", sans-serif;
 }
 

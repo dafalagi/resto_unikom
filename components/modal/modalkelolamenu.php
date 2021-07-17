@@ -88,7 +88,7 @@
         <label for="editstokmenu" class="col-sm-2 col-form-label">Menu Hari Ini :</label>
             <div class="col-sm-10">
                 <select class="form-select" aria-label="Default select example">
-                <option selected>Pilih</option>
+                <option selected>-Pilih-</option>
                 <option value="1">Ya</option>
                 <option value="2">Tidak</option>
                 </select>
