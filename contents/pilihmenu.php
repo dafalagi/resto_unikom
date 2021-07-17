@@ -20,7 +20,7 @@
                         <table class="table table-hover table-dark">
                             <thead>
                                 <tr class="namacolom">
-                                <th colspan="4" scope="col">Deskripsi Menu</th>
+                                <th colspan="5" scope="col">Deskripsi Menu</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,6 +31,14 @@
                                     <p> Bebek Bakar<br> 
                                         Bebek Bakar dengan bumbu cabe yang membara siap menggempur bibir anda
                                     </p>
+                                </td>
+                                <td> 
+                                    <form>
+                                        <div class="d-grid gap-2 col-3 ">
+                                            <label for="jumlahmenu" class="form-label">Jumlah</label>
+                                            <input class="form-control" id="inputjumlahmenu" type="username" name="jumlahmenu"/>
+                                        </div>
+                                    </form>
                                 </td>
                                 <td>
                                     <div class="d-grid gap-2 col-3">
@@ -55,6 +63,10 @@
                                 </li>
                             </ul>
                         </nav>
+                        <!-- btn pesan dan kembali -->
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a class="btn btn-secondary" href="" role="button">Kembali</a>
+                        <button class="btn btn-primary" type="submit">Pesan</button>
                     </div>
                 </main>
             </div>

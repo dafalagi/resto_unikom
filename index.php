@@ -35,7 +35,7 @@
   <!-- Main -->
     <div id="cover">
       <div class="landing-text">
-        <h1 class="cover-text fs-1">Resto Teyvat</h1>
+        <h1 class="cover-text fs-1">Resto Unikom</h1>
         <p class="p-text fs-4">
           Selamat Datang Pelanggan yang Terhormat <br>
           Selamat Menikmati Hidangan Kami
