@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../img/beranda\ pic.jpg");
   background-size: cover;
   background-position: center center;
@@ -33,7 +33,9 @@ body {
 .card{
     padding: 30px 30px;
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: #292b2c;
+    color: #fcfcfc;
+     border-color: #292b2c;
 }
 .pagination{
     margin-top: 60px;
@@ -41,4 +43,9 @@ body {
 .card-text{
     font-family: "Poppins", sans-serif;
     font-size: 50px;
+}
+.pagination li a{
+  background-color: #292b2c;
+  color: #fcfcfc;
+  border-color: #292b2c;
 }

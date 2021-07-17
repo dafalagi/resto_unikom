@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <p class="card-text">01</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary pilih">Pilih</button>
+                        <button type="button" class="btn btn-light pilih">Pilih</button>
                         </div>
                         <p class="jumlahkursi">Jumlah Kursi : 4</p>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <p class="card-text">02</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary pilih">Pilih</button>
+                        <button type="button" class="btn btn-light pilih">Pilih</button>
                         </div>
                         <p class="jumlahkursi">Jumlah Kursi : 4</p>
                     </div>
@@ -49,7 +49,7 @@
                     <div class="card-body">
                         <p class="card-text">03</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary pilih">Pilih</button>
+                        <button type="button" class="btn btn-light pilih">Pilih</button>
                         </div>
                         <p class="jumlahkursi">Jumlah Kursi : 4</p>
                     </div>
@@ -63,7 +63,7 @@
                     <div class="card-body">
                         <p class="card-text">04</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary pilih">Pilih</button>
+                        <button type="button" class="btn btn-light pilih">Pilih</button>
                         </div>
                         <p class="jumlahkursi">Jumlah Kursi : 4</p>
                     </div>
@@ -74,7 +74,7 @@
                     <div class="card-body">
                         <p class="card-text">05</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary pilih">Pilih</button>
+                        <button type="button" class="btn btn-light pilih">Pilih</button>
                         </div>
                         <p class="jumlahkursi">Jumlah Kursi : 4</p>
                     </div>
@@ -85,7 +85,7 @@
                     <div class="card-body">
                         <p class="card-text">06</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary pilih">Pilih</button>
+                        <button type="button" class="btn btn-light pilih">Pilih</button>
                         </div>
                         <p class="jumlahkursi">Jumlah Kursi : 4</p>
                     </div>
