@@ -39,6 +39,10 @@
                                 <div class="sb-nav-link-icon"></div>
                                 Buat Laporan
                             </a>
+                            <a class="nav-link" href="home.php?nav=daftarpesanan">
+                                <div class="sb-nav-link-icon"></div>
+                                Daftar Pesanan
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

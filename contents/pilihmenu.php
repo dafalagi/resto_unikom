@@ -42,7 +42,7 @@
                                 </td>
                                 <td>
                                     <div class="d-grid gap-2 col-3">
-                                        <button class="btn btn-primary" type="button">Pilih</button>
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalpilih">Pilih</button>
                                         <button class="btn btn-secondary" type="button">Batal</button>
                                     </div>
                                 </td>
@@ -52,13 +52,14 @@
                         <!-- btn pesan dan kembali -->
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <a class="btn btn-secondary" href="" role="button">Kembali</a>
-                        <button class="btn btn-primary" type="submit">Pesan</button>
+                        <button class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#modalpesan">Pesan</button>
                     </div>
                 </main>
             </div>
         </div>
 
         <?php 
+            include_once('components/modal/modalberhasil.php'); 
             include_once('layouts/scripts.php');
             include_once('layouts/end.php')
         ?>
