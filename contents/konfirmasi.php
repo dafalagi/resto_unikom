@@ -16,33 +16,57 @@
                     <div class="container-fluid px-4">
     <!-- main -->
     <!-- card1 -->
-                    <div class="d-grid gap-4">
-                    <div class="card">
+                <div class="d-grid gap-4">
+                    <div class="card text-white bg-dark">
                         <div class="card-header">
-                            No Meja
+                            No Meja ?php?
                         </div>
                         <div class="card-body">
-                        <table class="table">
-                            <thead>
-                                <tr><th scope="col">Menu yang Dipilih</th>
-                                    <th scope="col">Jumlah Menu</th>
-                                    <th scope="col">Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Koaci</th>
-                                    <td>2</td>
-                                    <td>1000000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">pempek</th>
-                                    <td>1</td>
-                                    <td>50000</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <table class="table text-white">
+                                <thead>
+                                    <tr>
+                                        <th>Menu yang Dipilih</th>
+                                        <th>Jumlah Menu</th>
+                                        <th>Harga</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Bebek Tempur</th>
+                                        <td>2</td>
+                                        <td>62000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <a href="#" class="btn btn-primary">Konfirmasi</a>
+                            Total Harga ?php?
+                        </div>
+                    </div>
+    <!-- card2 -->
+                <div class="d-grid gap-4">
+                    <div class="card text-white bg-dark">
+                        <div class="card-header">
+                            No Meja ?php?
+                        </div>
+                        <div class="card-body">
+                            <table class="table text-white">
+                                <thead>
+                                    <tr>
+                                        <th>Menu yang Dipilih</th>
+                                        <th>Jumlah Menu</th>
+                                        <th>Harga</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Ayam Geprek</th>
+                                        <td>2</td>
+                                        <td>23000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" class="btn btn-primary">Konfirmasi</a>
+                            Total Harga ?php?
                         </div>
                     </div>       
     
