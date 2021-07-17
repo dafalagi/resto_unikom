@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
+    url("../img/beranda\ pic.jpg");
+  background-size: cover;
+  background-position: center center;
+  padding-top: 3rem;
+}
+.namacolom {
+  text-align: center;
+}

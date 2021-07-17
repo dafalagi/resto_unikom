@@ -34,7 +34,7 @@
                                 </td>
                                 <td> 
                                     <form>
-                                        <div class="d-grid gap-2 col-3">
+                                        <div class="jumlah d-grid gap-2 col-3">
                                             <label for="jumlahmenu" class="form-label">Jumlah</label>
                                             <input class="form-control" id="inputjumlahmenu" type="username" name="jumlahmenu"/>
                                         </div>
@@ -49,20 +49,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <!-- pagination -->
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
                         <!-- btn pesan dan kembali -->
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <a class="btn btn-secondary" href="" role="button">Kembali</a>
