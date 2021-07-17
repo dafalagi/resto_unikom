@@ -43,7 +43,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        User
+                        <?php echo $_SESSION['user'] ?>
                     </div>
                 </nav>
             </div>

@@ -1,4 +1,17 @@
-<?php 
+<?php
+    session_start();
+    include_once('controller/t_pegawai.php');
+
+    $pegawaiObj = new Pegawai();
+
+    if (!isset($_SESSION['user'])) {
+        header('location:index.php', true, 301);
+        exit();
+    }
+    if (isset($_GET['logout'])) {
+        $pegawaiObj->logout();
+    }
+
     if (isset($_GET['nav'])) {
         if ($_GET['nav'] == "pilihmenu") {
             include_once('contents/pilihmenu.php');

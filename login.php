@@ -1,4 +1,19 @@
-    <?php include('layouts/head.php') ?>
+    <?php
+        session_start();
+
+        include_once('layouts/head.php');
+        include_once('controller/t_pegawai.php');
+
+        $pegawaiObj = new Pegawai();
+
+        if (isset($_SESSION['user'])) {
+            header('location:home.php', true, 301);
+            exit();
+        }
+        if (isset($_POST['login'])) {
+            $pegawaiObj->loginPegawai($_POST);
+        }
+    ?>
     
     <!-- Custom Styles -->
         <link href="assets/styles/styles.css" rel="stylesheet" />
@@ -14,9 +29,9 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputusername" type="username" name="username" placeholder="username" />
+                                                <input class="form-control" id="inputusername" type="username" name="username" placeholder="Username" />
                                                 <label for="inputEmail">Username</label>
                                             </div>
                                             <div class="form-floating mb-3">
@@ -29,7 +44,7 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="btn btn-primary" href="index.php"><--  Halaman Pengantar</a>
-                                                <a class="btn btn-primary" name="login" href="home.php">Login</a>
+                                                <button type="submit" class="btn btn-primary" name="login">Login</button>
                                             </div>
                                         </form>
                                     </div>
@@ -45,6 +60,6 @@
         </div>
 
         <?php
-            include('layouts/scripts.php');
-            include('layouts/end.php');
+            include_once('layouts/scripts.php');
+            include_once('layouts/end.php');
         ?>

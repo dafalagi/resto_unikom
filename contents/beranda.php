@@ -1,4 +1,6 @@
- <?php include_once('layouts/head.php') ?>   
+ <?php 
+    include_once('layouts/head.php');
+ ?>   
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css">
@@ -14,8 +16,6 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                      
-                        <?php include_once('components/breadcrumb.php') ?>
 
                         <!-- Main -->
                     <div id="main">

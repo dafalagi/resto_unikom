@@ -1,4 +1,16 @@
-<?php include_once('layouts/head.php') ?>
+<?php 
+    session_start();
+
+    include_once('layouts/head.php');
+    include_once('controller/t_pegawai.php');
+
+    $pegawaiObj = new Pegawai();
+
+    if (isset($_POST['register'])) {
+        $pegawaiObj->registerPegawai($_POST);
+    }
+
+?>
 
         <!-- Custom Styles -->
         <link href="assets/styles/styles.css" rel="stylesheet" />
@@ -14,7 +26,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Register Pegawai</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form method="POST">
                                         <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputnama" type="nama" name="nama" placeholder="namapegawai" />
                                                 <label for="inputnama">Nama Pegawai</label>
@@ -46,7 +58,7 @@
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="login.php" name="register">Register</a></div>
+                                                <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" name="register">Register</button></div>
                                             </div>
                                         </form>
                                     </div>

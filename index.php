@@ -1,4 +1,20 @@
-<?php include('layouts/head.php') ?>
+<?php
+  session_start();
+
+  include('layouts/head.php');
+
+  if (isset($_SESSION['user'])) {
+    header('location:home.php', true, 301);
+    exit();
+  }
+  if (isset($_GET['nomeja']) && $_GET['nomeja'] !== "") {
+    $_SESSION['user'] = $_GET['nomeja'];
+    $_SESSION['nomeja'] = $_GET['nomeja'];
+    header('location:home.php', true, 301);
+    exit();
+  }
+
+?>
 
     <!-- Custom Styles -->
     <link href="assets/styles/styles.css" rel="stylesheet"/>
@@ -24,11 +40,17 @@
           Selamat Datang Pelanggan yang Terhormat <br>
           Selamat Menikmati Hidangan Kami
         </p>
+        <?php
+          $meja = "";
+          if (isset($_GET['meja'])) {
+            $meja = $_GET['meja'];
+          }
+        ?>
         <a
           class="btn btn-primary btn-lg"
-          href="home.php"
           data-aos="fade-zoom-in"
           data-aos-delay="1500"
+          href="index.php?nomeja=<?php echo $meja ?>"
         >
           Mulai
         </a>

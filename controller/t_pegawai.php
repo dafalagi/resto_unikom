@@ -24,9 +24,9 @@
                 $result = $this->conn->query($sql);
                 if ($result->num_rows == 1) {
                     while ($row = $result->fetch_assoc()) {
-                        if ($username != $row['username'] || $password != $row['password']) {
+                        if ($username == $row['username'] && $password == $row['password']) {
                             $_SESSION['login'] = "true";
-                            $_SESSION['username'] = $username;
+                            $_SESSION['user'] = $username;
                             header('Location:./home.php', true, 301);
                             exit();
                         }else {
@@ -52,30 +52,44 @@
 
             $sql = "SELECT * FROM t_pegawai WHERE username='$username'";
             $result = $this->conn->query($sql);
-            $row = $result->fetch_assoc();
             
             if (empty($username) || empty($nama) || empty($password) || empty($password2) ||
                 empty($jamkerja) || empty($gaji)) {
                 return $errMsg = "Please fill the blank field";
-            }else if ($username == $row['username']){
+            }else if ($result->num_rows == 1){
                 return $errMsg = "Username already exists";
-            }else if ($password != $password2){
+            }else if ($password !== $password2){
                 return $errMsg = "Password does not match";
             }else if (strlen($password) < 6){
                 return $errMsg = "Password should be 6 digits";
             }else {
                 $sql2 = "INSERT INTO t_pegawai VALUES ('$username','$password','$nama',
                         '$jamkerja','$gaji')";
+                if (str_contains($password, 'pelayan') !== false) {
+                    $sql3 = "INSERT INTO t_pelayan (username) VALUES ('$username')";
+                }else if (str_contains($password, 'kasir') !== false) {
+                    $sql3 = "INSERT INTO t_kasir (username) VALUES ('$username')";
+                }else if (str_contains($password, 'koki') !== false) {
+                    $sql3 = "INSERT INTO t_koki (username) VALUES ('$username')";
+                }
                 $result2 = $this->conn->query($sql2);
-                if ($result2 == true){
+                $result3 = $this->conn->query($sql3);
+                if ($result2 == true && $result3 == true){
                     $_SESSION['login'] = "true";
-                    $_SESSION['username'] = $username;
+                    $_SESSION['user'] = $username;
                     header('Location:./home.php', true, 301);
                     exit();
                 }else {
                     return $errMsg = "You are not registered. Please try again";
                 }
             }
+        }
+
+        public function logout(){
+            session_unset();
+            session_destroy();
+            header("Location:./index.php", true, 301);
+            exit();
         }
     }
 ?>
