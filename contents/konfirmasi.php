@@ -38,7 +38,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="btn btn-primary">Konfirmasi</a>
+                            <a href="../components/modal/confirmKonfirmasi.php" class="btn btn-primary">Konfirmasi</a>
                             Total Harga ?php?
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="btn btn-primary">Konfirmasi</a>
+                            <a href="../components/modal/test.php" class="btn btn-primary">Konfirmasi</a>
                             Total Harga ?php?
                         </div>
                     </div>       
