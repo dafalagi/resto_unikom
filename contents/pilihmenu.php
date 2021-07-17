@@ -34,7 +34,7 @@
                                 </td>
                                 <td> 
                                     <form>
-                                        <div class="d-grid gap-2 col-3 ">
+                                        <div class="d-grid gap-2 col-3">
                                             <label for="jumlahmenu" class="form-label">Jumlah</label>
                                             <input class="form-control" id="inputjumlahmenu" type="username" name="jumlahmenu"/>
                                         </div>
