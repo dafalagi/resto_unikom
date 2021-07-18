@@ -18,6 +18,7 @@
                         <div class="card-header text-center">
                         Laporan Bulanan
                     </div>
+                    <!--awal card-->
                     <div class="card-body">
                     <div class="mb-3 row">
                         <label for="pilihbulan" class="col-sm-2 col-form-label">Bulan </label>
@@ -80,6 +81,7 @@
                     <button type="button" class="btn btn-primary" name="tambah" type="button" data-bs-toggle="modal" data-bs-target="#cetaklaporan">Buat</button>
                     </div>
                     </div>
+                    <!--close card-->
                     </div>
                     </div>
                     </div>
