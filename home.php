@@ -48,6 +48,8 @@
             include_once('contents/buatlaporan.php');
         }else if ($_GET['nav'] == "daftarpesanan") {
             include_once('contents/daftarpesanan.php');
+        }else if ($nav == "konfirmasibayar") {
+            include_once('contents/konfirmasipembayaran.php');
         }
     }else {
         include_once('contents/beranda.php');

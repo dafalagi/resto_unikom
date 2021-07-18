@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="modal-footer justify-content-end">
-      <button type="button" class="btn btn-primary" name="tambah">Ok</button>
+      <button type="button" class="btn btn-primary" name="cetakstruk">Cetak</button>
       </div>
     </div>
   </div>
