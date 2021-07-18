@@ -21,77 +21,47 @@
             </div>
         </div>
 
-        <div class="row mb-4">
-            <div class="col -md">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">01</p>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-light pilih">Pilih</button>
-                        </div>
-                        <p class="jumlahkursi">Jumlah Kursi : 4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col -md">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">02</p>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-light pilih">Pilih</button>
-                        </div>
-                        <p class="jumlahkursi">Jumlah Kursi : 4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col -md">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">03</p>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-light pilih">Pilih</button>
-                        </div>
-                        <p class="jumlahkursi">Jumlah Kursi : 4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+            $meja = $mejaObj->totalMeja();
+            $data = $meja->fetch_array();
+            $totalMeja = $data[0];
+            $hasil = $totalMeja / 3;
 
+            if ($totalMeja < (((int) $hasil * 3) + 2) and $totalMeja > ((int) $hasil * 3)) {
+                $divrow = (int) $hasil + 1;
+            }else if ($totalMeja < (((int) $hasil * 3) + 3) and $totalMeja > ((int) $hasil * 3)) {
+                $divrow = (int) $hasil + 1;
+            }else {
+                $divrow = (int) $hasil;
+            }
+
+            $i = 1;
+            $k = 0;
+            while ($i <= $divrow) {
+                $i++;
+        ?>
         <div class="row mb-4">
+            <?php
+                $j = 1;
+                while ($j < 4 and $k < $totalMeja ) {
+                    $k++;
+                    $result = $mejaObj->viewMeja($k);
+                    $row = $result->fetch_assoc();
+                    $j++; 
+            ?>
             <div class="col -md">
                 <div class="card">
                     <div class="card-body">
-                        <p class="card-text">04</p>
+                        <p class="card-text"><?php echo $row['nomor_meja'] ?></p>
                         <div class="d-grid gap-2 col-6 mx-auto">
                         <button type="button" class="btn btn-light pilih">Pilih</button>
                         </div>
-                        <p class="jumlahkursi">Jumlah Kursi : 4</p>
+                        <p class="jumlahkursi">Jumlah Kursi : <?php echo $row['jumlah_kursi'] ?></p>
                     </div>
                 </div>
             </div>
-            <div class="col -md">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">05</p>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-light pilih">Pilih</button>
-                        </div>
-                        <p class="jumlahkursi">Jumlah Kursi : 4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col -md">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">06</p>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-light pilih">Pilih</button>
-                        </div>
-                        <p class="jumlahkursi">Jumlah Kursi : 4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <?php    } ?>
+        </div> <?php } ?>
           </div>
     <!-- akhir list meja -->
     

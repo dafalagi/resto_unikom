@@ -18,9 +18,22 @@
         public function getMeja() {
             $sql = "SELECT * FROM t_meja";
             $result = $this->conn->query($sql);
-            $row = $result->fetch_assoc();
 
-            return $row;
+            return $result;
+        }
+
+        public function totalMeja() {
+            $sql = "SELECT COUNT(nomor_meja) FROM t_meja";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function viewMeja($nomeja) {
+            $sql = "SELECT * FROM t_meja WHERE nomor_meja='$nomeja'";
+            $result = $this->conn->query($sql);
+
+            return $result;
         }
     }
 ?>

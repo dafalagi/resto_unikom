@@ -15,27 +15,34 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="home.php?nav=pilihmenu">Pilih Menu</a>
-                                    <a class="nav-link" href="home.php?nav=pilihmeja">Pilih Meja</a>
+                                    <?php $pilihmenu = base64_url_encode("pilihmenu") ?>
+                                    <a class="nav-link" href="home.php?nav=<?php echo $pilihmenu ?>">Pilih Menu</a>
+                                    <?php $pilihmeja = base64_url_encode("pilihmeja") ?>
+                                    <a class="nav-link" href="home.php?nav=<?php echo $pilihmeja ?>">Pilih Meja</a>
                                 </nav>
                             </div>
-                            <a class="nav-link" href="home.php?nav=kelolamenu">
+                            <?php $kelolamenu = base64_url_encode("kelolamenu") ?>
+                            <a class="nav-link" href="home.php?nav=<?php echo $kelolamenu ?>">
                                 <div class="sb-nav-link-icon"></div>
                                 Kelola Menu
                             </a>
-                            <a class="nav-link" href="home.php?nav=konfirmasi">
+                            <?php $konfirmasi = base64_url_encode("konfirmasi") ?>
+                            <a class="nav-link" href="home.php?nav=<?php echo $konfirmasi ?>">
                                 <div class="sb-nav-link-icon"></div>
                                 Konfirmasi Pesanan
                             </a>
-                            <a class="nav-link" href="home.php?nav=status">
+                            <?php $status = base64_url_encode("status") ?>
+                            <a class="nav-link" href="home.php?nav=<?php echo $status ?>">
                                 <div class="sb-nav-link-icon"></div>
                                 Status Pesanan
                             </a>
-                            <a class="nav-link" href="home.php?nav=pembayaran">
+                            <?php $pembayaran = base64_url_encode("pembayaran") ?>
+                            <a class="nav-link" href="home.php?nav=<?php echo $pembayaran ?>">
                                 <div class="sb-nav-link-icon"></div>
                                 Pembayaran
                             </a>
-                            <a class="nav-link" href="home.php?nav=buatlaporan">
+                            <?php $laporan = base64_url_encode("buatlaporan") ?>
+                            <a class="nav-link" href="home.php?nav=<?php echo $laporan ?>">
                                 <div class="sb-nav-link-icon"></div>
                                 Buat Laporan
                             </a>

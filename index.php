@@ -1,17 +1,23 @@
 <?php
   session_start();
 
-  include('layouts/head.php');
+  include_once('layouts/head.php');
+  include_once('controller/t_meja.php');
+
+  $mejaObj = new Meja();
 
   if (isset($_SESSION['user'])) {
     header('location:home.php', true, 301);
     exit();
   }
   if (isset($_GET['nomeja']) && $_GET['nomeja'] !== "") {
-    $_SESSION['user'] = $_GET['nomeja'];
-    $_SESSION['nomeja'] = $_GET['nomeja'];
-    header('location:home.php', true, 301);
-    exit();
+    $data = $mejaObj->viewMeja($_GET['nomeja']);
+    if ($data->num_rows == 1) {
+      $_SESSION['user'] = $_GET['nomeja'];
+      $_SESSION['nomeja'] = $_GET['nomeja'];
+      header('location:home.php', true, 301);
+      exit();
+    }
   }
 
 ?>
