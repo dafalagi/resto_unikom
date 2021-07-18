@@ -10,7 +10,7 @@
             include_once('components/navbar.php');
             include_once('components/sidenav.php');
         ?>
-
+        <button type="button" class="btn btn-primary btn-lg">Large button</button>
             
 
 
