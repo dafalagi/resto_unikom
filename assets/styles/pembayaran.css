@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
+    url("../img/beranda\ pic.jpg");
+  background-size: cover;
+  background-position: center center;
+  padding-top: 3rem;
+}
+
+.landing-text {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #fcfcfc;
+}
+.namacolom {
+  text-align: center;
+}
+
+.pagination li a {
+  background-color: #292b2c;
+  color: #fcfcfc;
+  border-color: #292b2c;
+}
+.tambah {
+  border-color: #443f3f;
+}
+.search1 {
+  position: absolute;
+}
