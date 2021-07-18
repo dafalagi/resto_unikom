@@ -46,7 +46,8 @@
                                 <div class="sb-nav-link-icon"></div>
                                 Buat Laporan
                             </a>
-                            <a class="nav-link" href="home.php?nav=daftarpesanan">
+                            <?php $daftarpesanan = base64_url_encode("daftarpesanan") ?>
+                            <a class="nav-link" href="home.php?nav=<?php echo $daftarpesanan ?>">
                                 <div class="sb-nav-link-icon"></div>
                                 Daftar Pesanan
                             </a>
