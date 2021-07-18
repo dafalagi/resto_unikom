@@ -48,7 +48,7 @@
                                         </td>
                                         <td class="align-middle" style="padding-left: 10px;">
                                             <div>
-                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#">Disajikan</a>
+                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modaldisajikan">Disajikan</a>
                                             </div>
                                         </td>
                                     </tr> 
@@ -70,7 +70,7 @@
                                         </td>
                                         <td class="align-middle" style="padding-left: 10px;">
                                             <div>
-                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#">Disajikan</a>
+                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modaldisajikan">Disajikan</a>
                                             </div>
                                         </td>
                                     </tr> 
@@ -100,6 +100,7 @@
         </div>
 
         <?php
+            include_once('components/modal/modaldaftarp.php');
             include_once('layouts/scripts.php');
             include_once('layouts/end.php');
         ?>

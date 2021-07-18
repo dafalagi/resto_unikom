@@ -9,7 +9,7 @@
       <div class="modal-body">
       Status diubah menjadi dibuat
       </div>
-      <div class="modal-footer justify-content-center">
+      <div class="modal-footer justify-content-end">
       <button type="button" class="btn btn-primary" name="tambah">Ok</button>
       </div>
     </div>
@@ -26,7 +26,7 @@
       <div class="modal-body">
       Menu selesai dibuat
       </div>
-      <div class="modal-footer justify-content-center">
+      <div class="modal-footer justify-content-end">
       <button type="button" class="btn btn-primary" name="tambah">Ok</button>
       </div>
     </div>
