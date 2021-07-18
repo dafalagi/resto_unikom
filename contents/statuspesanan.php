@@ -15,48 +15,60 @@
                 <main>
                     <div class="container-fluid px-4">                      
 <!-- tabel -->
-<table class="table table-hover table-dark ">
+<div class="table-responsive">
+<table class="table text-center table-hover table-dark ">
     <thead>
         <tr class="namacolom">
-            <th colspan="4" scope="col">Status Pesanan</th>
+            <th>no meja</th>
+            <th class="align-top" style="padding-left: 50px;">Nama Menu</th>
+            <th>Jumlah</th>
+            <th></th>
         </tr>
     </thead>
     <!-- body tabel -->
         <tbody>
+    <!-- tabel 1 -->
             <tr>
-                <td>Nomor Meja 1</td>
-                <td> 
+                <td class="align-top">Nomor Meja 1</td>
+                <td class="align-top" style="padding-left: 50px;"> 
                     <p>Bebek Bakar<br>
                         Ayam Bakar</p>
                 </td>
-                <td> 
-                    <p>jumlah</p>
+                <td class="align-top"> 
+                    <p> 
+                        2 <br>
+                        2
+                    </p>
                 </td>
-                <td>
-                    <div class="d-grid gap-2 col-2">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstatus">Dibuat</button>
-                        <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalselesai">Selesai</button>
+                <td class="align-middle" style="padding-left: 10px;">
+                    <div class="d-grid gap-2 col-10">
+                        <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstatus">Dibuat</a>
+                        <a class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalselesai">Selesai</a>
                     </div>
                 </td>
-            </tr>
+            </tr> 
+    <!-- tabel 2 -->
             <tr>
-                <td>Nomor Meja 2</td>
-                <td> 
+                <td class="align-top">Nomor Meja 2</td>
+                <td class="align-top" style="padding-left: 50px;"> 
                     <p>Bebek Bakar<br>
                         Ayam Bakar</p>
                 </td>
-                <td> 
-                    <p>jumlah</p>
+                <td class="align-top"> 
+                    <p> 
+                        2 <br>
+                        2
+                    </p>
                 </td>
-                <td>
-                    <div class="d-grid gap-2 col-2">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstatus">Dibuat</button>
-                        <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalselesai">Selesai</button>
+                <td class="align-middle" style="padding-left: 10px;">
+                    <div class="d-grid gap-2 col-10">
+                        <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstatus">Dibuat</a>
+                        <a class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalselesai">Selesai</a>
                     </div>
-                </td>
-            </tr>
+                </
         </tbody>
 </table>
+</div>
 <a class="btn btn-secondary" href="#" role="button">Kembali</a>
         <?php 
             include_once('components/modal/modalstatuspesanan.php'); 

@@ -15,33 +15,41 @@
                 <main>
                     <div class="container-fluid px-4">
                         <!-- tabel -->
-                        <table class="table table-hover table-dark">
-                            <tr>
-                                <th>No Meja</th>
-                                <th>List Menu</th>
-                                <th>Aksi</th>
-                            </tr>
-                            <!-- tabel 1 -->
-                            <tr>
-                                <td>No Meja 1</td>
-                                <td>
-                                    Ayam Bakar <br>
-                                    Bebek Baka <br>
-                                    Ayam Pristail
-                                </td>
-                                <td><button class="btn btn-primary" type="submit">Proses</button></td>
-                            </tr>
-                            <tr>
-                                <td>No Meja 2</td>
-                                <td>
-                                    Ayam Bakar <br>
-                                    Bebek Baka <br>
-                                    Ayam Pristail
-                                </td>
-                                <td><button class="btn btn-primary" type="submit">Proses</button></td>
-                            </tr>
-                            <tr>  
+                        <div class="table-responsive">
+                        <table class="table text-center table-hover table-dark ">
+                            <thead>
+                                <tr class="namacolom">
+                                    <th>no meja</th>
+                                    <th class="align-top" style="padding-left: 50px;">
+                                    List Menu Yang Dipesan
+                                    </th>
+                                    <th>Jumlah</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <!-- body tabel -->
+                                <tbody>
+                                    <tr>
+                                        <td class="align-top">Nomor Meja 1</td>
+                                        <td class="align-top" style="padding-left: 50px;"> 
+                                            <p>Bebek Bakar<br>
+                                                Ayam Bakar</p>
+                                        </td>
+                                        <td class="align-top"> 
+                                            <p> 
+                                                2 <br>
+                                                2
+                                            </p>
+                                        </td>
+                                        <td class="align-middle" style="padding-left: 10px;">
+                                            <div class="d-grid gap-2 col-9">
+                                                <a class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalselesai">Proses</a>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                </tbody>
                         </table>
+                        </div>
                         <!-- pagination -->
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
