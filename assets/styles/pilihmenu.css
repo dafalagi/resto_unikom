@@ -28,3 +28,6 @@ body {
   color: #fcfcfc;
   border-color: #292b2c;
 }
+form {
+  text-align: center;
+}

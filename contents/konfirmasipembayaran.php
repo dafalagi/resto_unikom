@@ -44,25 +44,7 @@
                                         <td class="align-middle" style="padding-left: 10px;">
                                             <div class="d-grid gap-2 col-9">
                                                 <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstruk">Modal Test</a>
-                                                <a class="btn btn-primary" type="button" href="konfirmasipembayaran.php">Proses</a>
-                                            </div>
-                                        </td>
-                                    </tr> 
-                                    <tr>
-                                        <td class="align-top">Nomor Meja 2</td>
-                                        <td class="align-top" style="padding-left: 50px;"> 
-                                            <p>Bebek Bakar<br>
-                                                Ayam Bakar</p>
-                                        </td>
-                                        <td class="align-top"> 
-                                            <p> 
-                                                2 <br>
-                                                2
-                                            </p>
-                                        </td>
-                                        <td class="align-middle" style="padding-left: 10px;">
-                                            <div class="d-grid gap-2 col-9">
-                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstruk">Modal Test</a>
+                                                <a class="btn btn-primary" type="button" href="">Proses</a>
                                             </div>
                                         </td>
                                     </tr> 
