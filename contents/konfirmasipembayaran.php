@@ -2,7 +2,7 @@
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css">
-    <link rel="stylesheet" href="./assets/styles/daftarpesanan.css">
+    <link rel="stylesheet" href="./assets/styles/pembayaran.css">
 </head>
     <body class="sb-nav-fixed">
         
@@ -20,20 +20,18 @@
                             <thead>
                                 <tr class="namacolom">
                                     <th>no meja</th>
-                                    <th class="align-top">
+                                    <th class="align-top" style="padding-left: 50px;">
                                     List Menu Yang Dipesan
                                     </th>
                                     <th>Jumlah</th>
-                                    <th>Status</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <!-- body tabel -->
                                 <tbody>
-                                    <!-- tabel 1 -->
                                     <tr>
-                                        <td class="align-top">Meja Nomor 1</td>
-                                        <td class="align-top"> 
+                                        <td class="align-top">Nomor Meja 1</td>
+                                        <td class="align-top" style="padding-left: 50px;"> 
                                             <p>Bebek Bakar<br>
                                                 Ayam Bakar</p>
                                         </td>
@@ -43,34 +41,10 @@
                                                 2
                                             </p>
                                         </td>
-                                        <td class="align-middle">
-                                            Dibuat
-                                        </td>
                                         <td class="align-middle" style="padding-left: 10px;">
-                                            <div>
-                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modaldisajikan">Disajikan</a>
-                                            </div>
-                                        </td>
-                                    </tr> 
-                                    <!-- tabel 2 -->
-                                    <tr>
-                                        <td class="align-top">Meja Nomor 2</td>
-                                        <td class="align-top"> 
-                                            <p>Bebek Bakar<br>
-                                                Ayam Bakar</p>
-                                        </td>
-                                        <td class="align-top"> 
-                                            <p> 
-                                                2 <br>
-                                                2
-                                            </p>
-                                        </td>
-                                        <td class="align-middle">
-                                            Dibuat
-                                        </td>
-                                        <td class="align-middle" style="padding-left: 10px;">
-                                            <div>
-                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modaldisajikan">Disajikan</a>
+                                            <div class="d-grid gap-2 col-9">
+                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstruk">Modal Test</a>
+                                                <a class="btn btn-primary" type="button" href="">Proses</a>
                                             </div>
                                         </td>
                                     </tr> 
@@ -100,7 +74,7 @@
         </div>
 
         <?php
-            include_once('components/modal/modaldaftarp.php');
+            include_once('components/modal/modalpembayaran.php'); 
             include_once('layouts/scripts.php');
             include_once('layouts/end.php');
         ?>

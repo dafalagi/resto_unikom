@@ -7,7 +7,12 @@
 }
 
 body {
+<<<<<<< HEAD
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/beranda\ pic.jpg");
+=======
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
+    url("../img/beranda\ pic.jpg");
+>>>>>>> 1942fd125af486de9ccafc5da06c805efc97ee86
   background-size: cover;
   background-position: center center;
 }
@@ -29,12 +34,21 @@ body {
 .pilih {
   margin-top: 80px;
 }
+<<<<<<< HEAD
 .card {
   padding: 30px 30px;
   text-align: center;
   background-color: #292b2c;
   color: #fcfcfc;
   border-color: #292b2c;
+=======
+.card{
+    padding: 30px 30px;
+    text-align: center;
+    background-color: #292b2c;
+    color: #fcfcfc;
+    border-color: #292b2c;
+>>>>>>> 1942fd125af486de9ccafc5da06c805efc97ee86
 }
 .pagination {
   margin-top: 60px;

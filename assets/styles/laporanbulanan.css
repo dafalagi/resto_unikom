@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -19,15 +20,9 @@ body {
   vertical-align: middle;
   color: #fcfcfc;
 }
-.namacolom {
-  text-align: center;
+.card-header{
+    font-family: "Poppins", sans-serif;
 }
-
-.pagination li a {
-  background-color: #292b2c;
-  color: #fcfcfc;
-  border-color: #292b2c;
-}
-form {
-  text-align: center;
+.form-label{
+    font-family: "Poppins", sans-serif;
 }
