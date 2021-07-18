@@ -44,8 +44,8 @@
                                 </td>
                                 <td>
                                     <div class="d-grid gap-2 col-3">
-                                        <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#editmenu">Edit</button>
-                                        <button class="btn btn-light" type="button">Hapus</button>
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#editmenu">Edit</button>
+                                        <button class="btn btn-secondary" type="button">Hapus</button>
                                     </div>
                                 </td>
                                 </tr>

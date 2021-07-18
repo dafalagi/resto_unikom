@@ -45,7 +45,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-dark" name="tambah">Tambah</button>
+        <button type="button" class="btn btn-primary" name="tambah">Tambah</button>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-dark" name="tambah">Update</button>
+        <button type="button" class="btn btn-primary" name="tambah">Update</button>
       </div>
     </div>
   </div>

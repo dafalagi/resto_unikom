@@ -76,8 +76,8 @@
                         </div>
                     </div>
                     <div class="text-center">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="button" class="btn btn-primary" name="tambah">Buat</button>
+                    <a class="btn btn-secondary" href="home.php" data-bs-dismiss="modal">Batal</a>
+                    <button type="button" class="btn btn-primary" name="tambah" type="button" data-bs-toggle="modal" data-bs-target="#cetaklaporan">Buat</button>
                     </div>
                     </div>
                     </div>
@@ -87,7 +87,8 @@
             </div>
         </div>
 
-        <?php 
+        <?php
+            include_once('components/modal/modallaporan.php'); 
             include_once('layouts/scripts.php');
             include_once('layouts/end.php');
         ?>
