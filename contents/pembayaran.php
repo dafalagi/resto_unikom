@@ -43,7 +43,6 @@
                                         </td>
                                         <td class="align-middle" style="padding-left: 10px;">
                                             <div class="d-grid gap-2 col-9">
-                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstruk">Modal Test</a>
                                                 <?php
                                                     $konfirmasibayar = base64_url_encode("konfirmasibayar")
                                                 ?>
@@ -65,7 +64,7 @@
                                         </td>
                                         <td class="align-middle" style="padding-left: 10px;">
                                             <div class="d-grid gap-2 col-9">
-                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstruk">Modal Test</a>
+                                            <a class="btn btn-primary" type="button" href="home.php?nav=<?php echo $konfirmasibayar ?>">Proses</a>
                                             </div>
                                         </td>
                                     </tr> 

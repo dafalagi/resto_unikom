@@ -24,19 +24,19 @@
                             <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Non-Tunai</h5>
-                                    <label for="nim">Nama Pemilik Kartu</label>
+                                    <label for="namapemilik">Nama Pemilik Kartu</label>
                                     <input class="form-control" type="text" placeholder="Nama" aria-label=".form-control-sm example">
                                     <div class="row">
                                         <div class="col">
-                                            <label for="nim">Nomor Kartu</label>
+                                            <label for="nomorkartu">Nomor Kartu</label>
                                             <input class="form-control" type="text" placeholder="Nama" aria-label=".form-control-sm example">
                                         </div>
                                         <div class="col">
-                                            <label for="nim">Expired</label>
+                                            <label for="expired">Expired</label>
                                             <input class="form-control" type="text" placeholder="Nama" aria-label=".form-control-sm example">
                                         </div>
                                     </div> 
-                                    <label for="nim">CVC</label>
+                                    <label for="cvc">CVC</label>
                                     <input class="form-control" type="text" placeholder="Nama" aria-label=".form-control-sm example">
                             </div>
                             </div>
@@ -66,8 +66,8 @@
                     </div>
                     <!-- Button -->
                     <div class="tombol">
-                        <button class="btn btn-secondary" type="submit">Kembali</button>
-                        <button class="btn btn-primary" type="submit">Bayar</button>
+                        <button class="btn btn-secondary" type="#">Kembali</button>
+                        <button class="btn btn-primary" type="submit"  data-bs-toggle="modal" data-bs-target="#modalstruk">Bayar</button>
                     </div>
                 </main>
             </div>
