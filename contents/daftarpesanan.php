@@ -78,7 +78,7 @@
                         </table>
                         </div>
                         <!-- pagination -->
-                        <nav aria-label="Page navigation example">
+                        <!-- <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
                                 <li class="page-item">
                                 <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -90,7 +90,7 @@
                                 <a class="page-link" href="#">Next</a>
                                 </li>
                             </ul>
-                        </nav>
+                        </nav> -->
                         <!--close pagination-->
                         <!-- bbtn kembali -->
                         <button class="btn btn-secondary" type="submit">Kembali</button>
