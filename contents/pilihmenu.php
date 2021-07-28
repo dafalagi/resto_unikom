@@ -43,7 +43,7 @@
                                 </td>
                                 <td class="align-middle">
                                     <div class="d-grid gap-2 col-3">
-                                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalpilih">Pilih</button>
+                                        <button class="btn btn-primary" type="button" onclick="alert('Pesanan berhasil dipilih')">Pilih</button>
                                         <button class="btn btn-secondary" type="button">Batal</button>
                                     </div>
                                 </td>

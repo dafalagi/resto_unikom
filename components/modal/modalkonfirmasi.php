@@ -9,7 +9,7 @@
       <div class="modal-body">
       apakah anda yakin ingin mengkonfirmasi pesanan ini?
       </div>
-      <div class="modal-footer justify-content-center">
+      <div class="modal-footer">
       <button type="button" class="btn btn-secondary" name="batal" data-bs-dismiss="modal">Tidak</button>
       <button type="button" class="btn btn-primary" name="tambah">Ya</button>
       </div>
