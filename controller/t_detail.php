@@ -14,5 +14,12 @@
                 return $this->conn;
             }
         }
+
+        public function viewDetail() {
+            $sql = "SELECT * FROM t_detail_pesanan";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
     }
 ?>

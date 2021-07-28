@@ -14,5 +14,13 @@
                 return $this->conn;
             }
         }
+
+        public function namaKoki($nipr) {
+            $sql = "SELECT nama FROM t_koki
+                    WHERE nipr=$nipr";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
     }
 ?>

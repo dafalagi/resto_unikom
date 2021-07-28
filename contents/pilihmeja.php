@@ -1,4 +1,11 @@
-<?php include_once('layouts/head.php') ?>   
+<?php 
+    include_once('layouts/head.php');
+
+    if (isset($_GET['status'])) {
+        $nomeja = base64_url_decode($_GET['status']);
+        $mejaObj->statusTerisi($nomeja);
+    }
+?>   
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css">
@@ -54,7 +61,20 @@
                     <div class="card-body">
                         <p class="card-text"><?php echo $row['nomor_meja'] ?></p>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-light pilih">Pilih</button>
+                        <?php 
+                            if ($row['status_meja'] == "tersedia") { 
+                                $pilihmeja = base64_url_encode("pilihmeja");
+                                $nomeja = base64_url_encode($row['nomor_meja']);
+                        ?>
+                        <a href="home.php?nav=<?php echo $pilihmeja ?>&status=<?php echo $nomeja ?>" 
+                        type="button" class="btn btn-light pilih">
+                            Pilih
+                        </a>
+                        <?php }else { ?>
+                        <button type="button" class="btn btn-light pilih" disabled>
+                            Terisi
+                        </button>
+                        <?php } ?>
                         </div>
                         <p class="jumlahkursi">Jumlah Kursi : <?php echo $row['jumlah_kursi'] ?></p>
                     </div>

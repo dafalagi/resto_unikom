@@ -14,5 +14,37 @@
                 return $this->conn;
             }
         }
+        
+        public function viewMenu() {
+            $sql = "SELECT * FROM t_menu";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function editMenu($post) {
+            $id = htmlspecialchars($_POST['edit_id_menu']);
+            $nama = htmlspecialchars($_POST['edit_nama_menu']);
+            $harga = htmlspecialchars($_POST['edit_harga_menu']);
+            $pembuat = htmlspecialchars($_POST['edit_pembuat_menu']);
+            $desk = htmlspecialchars($_POST['edit_desk_menu']);
+            $stok = htmlspecialchars($_POST['edit_stok_menu']);
+
+            $sql = "SELECT nipr FROM t_koki WHERE nama='$pembuat'";
+            $result = $this->conn->query($sql);
+
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                $nipr = $row['nipr'];
+
+                $sql2 = "UPDATE t_menu
+                        SET nama_menu='$nama', harga_menu='$harga', nipr='$nipr'
+                        deskripsi_menu='$desk', stok_menu='$stok' 
+                        WHERE id_menu='$id'";
+                $result2 = $this->conn->query($sql2);
+
+                return $result2;
+            }
+        }
     }
 ?>

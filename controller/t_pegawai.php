@@ -20,7 +20,13 @@
             $password = htmlspecialchars($_POST['password']);
 
             if (!empty($username || !empty($password))) {
-                $sql = "SELECT * FROM t_pegawai WHERE username='$username'";
+                if (str_contains($password, 'pelayan') !== false) {
+                    $sql = "SELECT * FROM t_pelayan WHERE username='$username'";
+                }else if (str_contains($password, 'kasir') !== false) {
+                    $sql = "SELECT * FROM t_kasir WHERE username='$username'";
+                }else if (str_contains($password, 'koki') !== false) {
+                    $sql = "SELECT * FROM t_koki WHERE username='$username'";
+                }
                 $result = $this->conn->query($sql);
                 if ($result->num_rows == 1) {
                     while ($row = $result->fetch_assoc()) {
@@ -56,25 +62,25 @@
             if (empty($username) || empty($nama) || empty($password) || empty($password2) ||
                 empty($jamkerja) || empty($gaji)) {
                 return $errMsg = "Please fill the blank field";
-            }else if ($result->num_rows == 1){
+            }else if ($result->num_rows == 1) {
                 return $errMsg = "Username already exists";
-            }else if ($password !== $password2){
+            }else if ($password !== $password2) {
                 return $errMsg = "Password does not match";
-            }else if (strlen($password) < 6){
+            }else if (strlen($password) < 6) {
                 return $errMsg = "Password should be 6 digits";
             }else {
-                $sql2 = "INSERT INTO t_pegawai VALUES ('$username','$password','$nama',
-                        '$jamkerja','$gaji')";
                 if (str_contains($password, 'pelayan') !== false) {
-                    $sql3 = "INSERT INTO t_pelayan (username) VALUES ('$username')";
+                    $sql2 = "INSERT INTO t_pelayan (username,password,nama,jam_kerja,gaji) 
+                            VALUES ('$username','$password','$nama','$jamkerja','$gaji')";
                 }else if (str_contains($password, 'kasir') !== false) {
-                    $sql3 = "INSERT INTO t_kasir (username) VALUES ('$username')";
+                    $sql2 = "INSERT INTO t_kasir (username,password,nama,jam_kerja,gaji) 
+                            VALUES ('$username','$password','$nama','$jamkerja','$gaji')";
                 }else if (str_contains($password, 'koki') !== false) {
-                    $sql3 = "INSERT INTO t_koki (username) VALUES ('$username')";
+                    $sql2 = "INSERT INTO t_koki (username,password,nama,jam_kerja,gaji) 
+                            VALUES ('$username','$password','$nama','$jamkerja','$gaji')";
                 }
                 $result2 = $this->conn->query($sql2);
-                $result3 = $this->conn->query($sql3);
-                if ($result2 == true && $result3 == true){
+                if ($result2 == true){
                     $_SESSION['login'] = "true";
                     $_SESSION['user'] = $username;
                     header('Location:./home.php', true, 301);
