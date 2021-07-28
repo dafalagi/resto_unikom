@@ -52,8 +52,7 @@
 </div>
 <!--akhirmodal-->
 <!-- Modal2 -->
-
-<div div div class="modal fade" id="editmenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editmenu<?php echo $row['id_menu'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <form method="POST">
