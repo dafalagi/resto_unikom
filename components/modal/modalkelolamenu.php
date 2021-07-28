@@ -34,7 +34,7 @@
       <div class="mb-3 row">
         <label for="inputdeskripsi" class="col-sm-2 col-form-label">Deskripsi Menu :</label>
             <div class="col-sm-10">
-                <textarea class="form-control" id="deskmenu" name="deks_menu" rows="3"></textarea>
+                <textarea class="form-control" id="deskmenu" name="desk_menu" rows="3"></textarea>
             </div>
       </div>
       <form action="#" method="post" enctype="multipart/form-data">
@@ -45,7 +45,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary" name="tambah_menu">Tambah</button>
+        <button type="submit" class="btn btn-primary" name="tambah_menu">Tambah</button>
       </div>
     </div>
   </div>
@@ -54,12 +54,12 @@
 <!-- Modal2 -->
 <div class="modal fade" id="editmenu<?php echo $row['id_menu'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
+    <form method="POST">
     <div class="modal-content">
-      <form method="POST">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Edit Menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>>
+      </div>
       <div class="modal-body">
       <div class="mb-3 row">
         <label for="editnamamenu" class="col-sm-2 col-form-label">Nama Menu :</label>
@@ -122,8 +122,9 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary" name="edit_menu">Update</button>
+        <button type="submit" class="btn btn-primary" name="edit_menu">Update</button>
       </div>
+    </div>
       </form>
     </div>
   </div>
