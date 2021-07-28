@@ -42,8 +42,8 @@
                 </td>
                 <td class="align-middle" style="padding-left: 10px;">
                     <div class="d-grid gap-2 col-10">
-                        <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstatus">Dibuat</a>
-                        <a class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalselesai">Selesai</a>
+                        <button class="btn btn-primary" type="submit" name="" onclick="return alert('Permintaan anda berhasil diproses');">Dibuat</button>
+                        <button class="btn btn-secondary" type="submit" name="" onclick="return alert('Permintaan anda berhasil diproses');">Selesai</button>
                     </div>
                 </td>
             </tr> 
@@ -62,8 +62,8 @@
                 </td>
                 <td class="align-middle" style="padding-left: 10px;">
                     <div class="d-grid gap-2 col-10">
-                        <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalstatus">Dibuat</a>
-                        <a class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalselesai">Selesai</a>
+                        <a class="btn btn-primary" type="button" onclick="return alert('Permintaan anda berhasil diproses');">Dibuat</a>
+                        <a class="btn btn-secondary" type="button" onclick="return alert('Permintaan anda berhasil diproses');">Selesai</a>
                     </div>
                 </
         </tbody>
