@@ -1,4 +1,5 @@
 <!-- Modal1 -->
+<form action="#" method="post">
 <div class="modal fade" id="tambahmenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
@@ -37,21 +38,21 @@
                 <textarea class="form-control" id="deskmenu" name="deks_menu" rows="3"></textarea>
             </div>
       </div>
-      <form action="#" method="post" enctype="multipart/form-data">
       <label for="inputfoto" class="col-sm-2 col-form-label">Masukan Foto :</label>
                 <input type="file" name="image">
                 <input type="submit" name="upload" value="Upload">
-      </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary" name="tambah_menu">Tambah</button>
+        <button type="submit" class="btn btn-primary" name="tambah_menu">Tambah</button>
       </div>
     </div>
   </div>
 </div>
+</form>
 <!--akhirmodal-->
 <!-- Modal2 -->
+<form action="#" method="post">
 <div class="modal fade" id="editmenu<?php echo $row['id_menu'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
@@ -122,10 +123,11 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary" name="edit_menu">Update</button>
+        <button type="submit" class="btn btn-primary" name="edit_menu">Update</button>
       </div>
       </form>
     </div>
   </div>
 </div>
+</form>
 <!--akhirmodal-->
