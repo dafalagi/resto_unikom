@@ -38,6 +38,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <!-- <a href="#" onclick="$('#modalkonfirmasi').modal({'backdrop': 'static'});" class="btn btn-primary">yourModal</a> -->
                             <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalkonfirmasi">Konfirmasi</button>
                             Total Harga ?php?
                         </div>

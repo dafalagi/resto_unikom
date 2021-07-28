@@ -38,13 +38,25 @@
                 $nipr = $row['nipr'];
 
                 $sql2 = "UPDATE t_menu
-                        SET nama_menu='$nama', harga_menu='$harga', nipr='$nipr'
+                        SET nama_menu='$nama', harga_menu='$harga', nipr='$nipr',
                         deskripsi_menu='$desk', stok_menu='$stok' 
                         WHERE id_menu='$id'";
                 $result2 = $this->conn->query($sql2);
 
                 return $result2;
             }
+        }
+
+        public function tambahMenu($post) {
+            $pembuat = htmlspecialchars($_POST['pembuat_menu']);
+            $nama = htmlspecialchars($_POST['nama_menu']);
+            $desk = htmlspecialchars($_POST['desk_menu']);
+            $harga = htmlspecialchars($_POST['harga_menu']);
+            $stok = htmlspecialchars($_POST['stok_menu']);
+
+            $sql = "SELECT nipr FROM t_koki ";
+            $result = $this->conn->query($sql);
+
         }
     }
 ?>

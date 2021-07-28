@@ -10,7 +10,7 @@
         menu anda berhasil dipilih
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Ok</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
       </div>
     </div>
   </div>
@@ -21,15 +21,17 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">Berhasil</h5>
+        <h5 class="modal-title" id="ModalLabel">Konfirmasi</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Pesanan anda berhasil dikirim, Silakan tunggu
+        Apakah anda yakin ingin mengkonfirmasi pesanan ini?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Ok</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-primary" name="tambah">Ya</button>
       </div>
     </div>
   </div>
 </div>
+
