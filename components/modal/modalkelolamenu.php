@@ -40,7 +40,6 @@
       </div>
       <label for="inputfoto" class="col-sm-2 col-form-label">Masukan Foto :</label>
                 <input type="file" name="image">
-                <input type="submit" name="upload" value="Upload">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
