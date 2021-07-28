@@ -36,7 +36,7 @@
                         <table class="table table-hover table-dark">
                             <thead>
                                 <tr class="namacolom">
-                                <th colspan="4" scope="col">Deskripsi Menu</th>
+                                <th colspan="4" scope="col">Daftar Menu</th>
                                 </tr>
                             </thead>
                             <tbody>
