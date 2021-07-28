@@ -59,7 +59,7 @@
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Edit Menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>>
+      </div>
       <div class="modal-body">
       <div class="mb-3 row">
         <label for="editnamamenu" class="col-sm-2 col-form-label">Nama Menu :</label>
@@ -119,6 +119,12 @@
                 </textarea>
             </div>
       </div>
+      <div class="mb-3 row">
+      <label for="inputfoto" class="col-sm-2 col-form-label">Masukan Foto :</label>
+         <div class="col-sm-10">
+                <input type="file" name="image">
+         </div>
+      </div>          
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
