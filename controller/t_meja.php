@@ -35,5 +35,23 @@
 
             return $result;
         }
+
+        public function statusTerisi($meja) {
+            $sql = "UPDATE t_meja
+                    SET status_meja='terisi'
+                    WHERE nomor_meja=$meja";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function statusTersedia($meja) {
+            $sql = "UPDATE t_meja
+                    SET status_meja='tersedia'
+                    WHERE nomor_meja=$meja";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
     }
 ?>

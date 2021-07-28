@@ -1,4 +1,10 @@
-<?php include_once('layouts/head.php') ?>   
+<?php 
+    include_once('layouts/head.php');
+
+    if (isset($_POST['edit_menu'])) {
+        $menuObj->editMenu($_POST);
+    }
+?>   
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css">
@@ -34,21 +40,32 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                    $no = 1;
+                                    $menu = $menuObj->viewMenu();
+                                    while ($row = $menu->fetch_assoc()) {
+                                ?>
                                 <tr>
-                                <th scope="row">1</th>
-                                <td><img src="assets/img/thumb/thumb-bebekbakar.jpg" alt=""></td>
+                                <th scope="row"><?php echo $no ?></th>
+                                <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['gambar_menu']); ?>" /></td>
                                 <td> 
-                                    <p> Bebek Bakar<br> 
-                                        Bebek Bakar dengan bumbu cabe yang membara siap menggempur bibir anda
+                                    <p><?php echo $row['nama_menu'] ?><br> 
+                                        <?php echo $row['deskripsi_menu'] ?>
                                     </p>
                                 </td>
                                 <td>
                                     <div class="d-grid gap-2 col-3">
-                                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#editmenu">Edit</button>
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" 
+                                        data-bs-target="#editmenu<?php echo $row['id_menu'] ?>">Edit</button>
                                         <button class="btn btn-secondary" type="button">Hapus</button>
                                     </div>
                                 </td>
                                 </tr>
+                                <?php
+                                    include('components/modal/modalkelolamenu.php');
+                                    $no++;
+                                    } 
+                                ?>
                             </tbody>
                         </table>
                         <!--close-->
@@ -58,8 +75,7 @@
             </div>
         </div>
 
-        <?php
-            include_once('components/modal/modalkelolamenu.php'); 
+        <?php 
             include_once('layouts/scripts.php');
             include_once('layouts/end.php');
         ?>

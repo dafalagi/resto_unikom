@@ -24,13 +24,20 @@
                                 </tr>
                             </thead>
                             <!-- tabel1 -->
+                            
+                            <?php
+                                $menu = $menuObj->viewMenu();
+                                $no = 1;
+                                while ($row = $menu->fetch_assoc()) {
+                            ?>
+
                             <tbody>
                                 <tr>
-                                <th scope="row" class="align-middle">1</th>
-                                <td><img src="assets/img/thumb/thumb-bebekbakar.jpg" alt=""></td>
+                                <th scope="row" class="align-middle"><?php echo $no ?></th>
+                                <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['gambar_menu']); ?>" /></td>
                                 <td> 
-                                    <p> Bebek Bakar<br> 
-                                        Bebek Bakar dengan bumbu cabe yang membara siap menggempur bibir anda
+                                    <p><?php echo $row['nama_menu'] ?><br> 
+                                        <?php echo $row['deskripsi_menu'] ?>
                                     </p>
                                 </td>
                                 <td> 
@@ -43,12 +50,16 @@
                                 </td>
                                 <td class="align-middle">
                                     <div class="d-grid gap-2 col-3">
-                                        <button class="btn btn-primary" type="button" onclick="alert('Pesanan berhasil dipilih')">Pilih</button>
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-targe  t="#modalpilih">Pilih</button>
                                         <button class="btn btn-secondary" type="button">Batal</button>
                                     </div>
                                 </td>
                                 </tr>
                             </tbody>
+                            <?php
+                                $no++;
+                                }
+                            ?>
                         </table>
                         <!-- btn pesan dan kembali -->
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">

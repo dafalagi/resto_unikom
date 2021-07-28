@@ -1,4 +1,10 @@
-<?php include_once('layouts/head.php') ?>   
+<?php 
+    include_once('layouts/head.php'); 
+    if (isset($_GET['status'])) {
+        $nomeja = base64_url_decode($_GET['status']);
+        $pesananObj->gantiStatus($nomeja);
+    }
+?>   
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css">
@@ -31,49 +37,52 @@
                             <!-- body tabel -->
                                 <tbody>
                                     <!-- tabel 1 -->
+
+                                    <?php
+                                        $pesanan = $pesananObj->viewPesanan();
+                                        while ($pRow = $pesanan->fetch_assoc()) {
+                                    ?>
+
                                     <tr>
-                                        <td class="align-top">Meja Nomor 1</td>
-                                        <td class="align-top"> 
-                                            <p>Bebek Bakar<br>
-                                                Ayam Bakar</p>
+                                        <td class="align-top">
+                                            Meja Nomor <?php echo $pRow['nomor_meja'] ?>
+                                        </td>
+                                        <?php ?>
+                                        <td class="align-top">
+                                            <?php
+                                                $menu = $pesananObj->getNamaJumlah($pRow['nomor_meja']);
+                                                $nomeja = $pRow['nomor_meja'];
+                                                while ($mRow = $menu->fetch_assoc()) {
+                                                    echo "<p>".$mRow['nama_menu']."</p>";
+                                                }
+                                            ?>
                                         </td>
                                         <td class="align-top"> 
-                                            <p> 
-                                                2 <br>
-                                                2
-                                            </p>
+                                            <?php
+                                                $menu = $pesananObj->getNamaJumlah($pRow['nomor_meja']);
+                                                while ($mRow = $menu->fetch_assoc()) {
+                                                    echo "<p>".$mRow['jumlah']."</p>";
+                                                }
+                                            ?>
                                         </td>
                                         <td class="align-middle">
-                                            Dibuat
+                                            <?php echo $pRow['status_pesanan'] ?>
                                         </td>
                                         <td class="align-middle" style="padding-left: 10px;">
                                             <div>
-                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modaldisajikan">Disajikan</a>
+                                                <?php 
+                                                    $daftarpesanan = base64_url_encode("daftarpesanan");
+                                                    $nomeja = base64_url_encode($pRow['nomor_meja']);
+                                                ?>
+                                                <a href="home.php?nav=<?php echo $daftarpesanan ?>
+                                                &status=<?php echo $nomeja ?>" 
+                                                class="btn btn-primary" type="button">Disajikan</a>
                                             </div>
                                         </td>
-                                    </tr> 
-                                    <!-- tabel 2 -->
-                                    <tr>
-                                        <td class="align-top">Meja Nomor 2</td>
-                                        <td class="align-top"> 
-                                            <p>Bebek Bakar<br>
-                                                Ayam Bakar</p>
-                                        </td>
-                                        <td class="align-top"> 
-                                            <p> 
-                                                2 <br>
-                                                2
-                                            </p>
-                                        </td>
-                                        <td class="align-middle">
-                                            Dibuat
-                                        </td>
-                                        <td class="align-middle" style="padding-left: 10px;">
-                                            <div>
-                                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modaldisajikan">Disajikan</a>
-                                            </div>
-                                        </td>
-                                    </tr> 
+                                    </tr>
+                                    <?php
+                                        }
+                                    ?> 
                                 </tbody>
                         </table>
                         </div>
@@ -99,7 +108,7 @@
             </div>
         </div>
 
-        <?php
+        <?php   
             include_once('components/modal/modaldaftarp.php');
             include_once('layouts/scripts.php');
             include_once('layouts/end.php');
