@@ -50,7 +50,7 @@
                                 </td>
                                 <td class="align-middle">
                                     <div class="d-grid gap-2 col-3">
-                                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-targe  t="#modalpilih">Pilih</button>
+                                        <button class="btn btn-primary" type="submit" name="" onclick="return alert('Permintaan anda berhasil diproses');">Pilih</button>
                                         <button class="btn btn-secondary" type="button">Batal</button>
                                     </div>
                                 </td>
@@ -62,9 +62,11 @@
                             ?>
                         </table>
                         <!-- btn pesan dan kembali -->
+                    <div class="tombol">
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a class="btn btn-secondary" href="" role="button">Kembali</a>
-                        <button class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#modalpesan">Pesan</button>
+                            <a class="btn btn-secondary" href="" role="button">Kembali</a>
+                            <button class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#modalpesan">Pesan</button>
+                        </div>
                     </div>
                 </main>
             </div>
