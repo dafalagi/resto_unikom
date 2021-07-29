@@ -1,6 +1,6 @@
 <?php
     const dbHost = "localhost";
     const dbUser = "root";
-    const dbPass = "";
+    const dbPass = "root";
     const dbName = "resto_unikom";
 ?>

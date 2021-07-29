@@ -8,6 +8,11 @@
     if (isset($_POST['tambah_menu'])) {
         $menuObj->tambahMenu($_POST);
     }
+
+    if (isset($_GET['hapus'])) {
+        $id = base64_url_decode($_GET['hapus']);
+        $menuObj->hapusMenu($id);
+    }
 ?>   
     
     <!-- Custom Styles -->
@@ -28,9 +33,10 @@
                     <nav class="navbar">
                             <div class="container-fluid">
                                 <button class="btn btn-dark me-2" type="button" data-bs-toggle="modal" data-bs-target="#tambahmenu">Tambah</button>
-                                <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
-                                <button class="btn btn-dark" type="cari">Cari</button>
+                                <form class="d-flex" method="POST">
+                                <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search"
+                                name="nama_menu">
+                                <button class="btn btn-dark" type="submit" name="cari_menu">Cari</button>
                                 </form>
                             </div>
                         </nav>
@@ -46,7 +52,11 @@
                             <tbody>
                                 <?php
                                     $no = 1;
-                                    $menu = $menuObj->viewMenu();
+                                    if (isset($_POST['cari_menu'])) {
+                                        $menu = $menuObj->cariMenu($_POST);
+                                    }else {
+                                        $menu = $menuObj->viewMenu();
+                                    }
                                     while ($row = $menu->fetch_assoc()) {
                                 ?>
                                 <tr>
@@ -61,7 +71,12 @@
                                     <div class="d-grid gap-2 col-3">
                                         <button class="btn btn-primary" type="button" data-bs-toggle="modal" 
                                         data-bs-target="#editmenu<?php echo $row['id_menu'] ?>">Edit</button>
-                                        <button class="btn btn-secondary" type="button">Hapus</button>
+                                        <?php
+                                            $kelolamenu = base64_url_encode("kelolamenu");
+                                            $id = base64_url_encode($row['id_menu']);
+                                        ?>
+                                        <a href="home.php?nav=<?php echo $kelolamenu ?>&hapus=<?php echo $id ?>"
+                                        class="btn btn-secondary" type="button">Hapus</a>
                                     </div>
                                 </td>
                                 </tr>
