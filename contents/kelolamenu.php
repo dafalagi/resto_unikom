@@ -4,6 +4,10 @@
     if (isset($_POST['edit_menu'])) {
         $menuObj->editMenu($_POST);
     }
+
+    if (isset($_POST['tambah_menu'])) {
+        $menuObj->tambahMenu($_POST);
+    }
 ?>   
     
     <!-- Custom Styles -->

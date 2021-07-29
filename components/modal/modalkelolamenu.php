@@ -35,7 +35,7 @@
       <div class="mb-3 row">
         <label for="inputdeskripsi" class="col-sm-2 col-form-label">Deskripsi Menu :</label>
             <div class="col-sm-10">
-                <textarea class="form-control" id="deskmenu" name="deks_menu" rows="3"></textarea>
+                <textarea class="form-control" id="deskmenu" name="desk_menu" rows="3"></textarea>
             </div>
       </div>
       <label for="inputfoto" class="col-sm-2 col-form-label">Masukan Foto :</label>

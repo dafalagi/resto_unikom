@@ -54,9 +54,31 @@
             $harga = htmlspecialchars($_POST['harga_menu']);
             $stok = htmlspecialchars($_POST['stok_menu']);
 
-            $sql = "SELECT nipr FROM t_koki ";
+            // Get file info 
+            $fileName = basename($_FILES["image"]["name"]); 
+            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+
+            // Allow certain file formats 
+            $allowTypes = array('jpg','png','jpeg','gif');
+
+            $sql = "SELECT nipr FROM t_koki WHERE nama='$pembuat'";
             $result = $this->conn->query($sql);
 
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                $nipr = $row['nipr'];
+
+                if (in_array($fileType, $allowTypes)) {
+                    $image = $_FILES['image']['tmp_name']; 
+                    $imgContent = addslashes(file_get_contents($image));
+
+                    $sql2 = "INSERT INTO t_menu (nipr, nama_menu, deskripsi_menu, harga_menu, stok_menu, gambar_menu)
+                            VALUES ('$nipr','$nama','$desk','$harga','$stok','$imgContent')";
+                    $result2 = $this->conn->query($sql2);
+                
+                    return $result2;
+                }
+            }
         }
     }
 ?>
