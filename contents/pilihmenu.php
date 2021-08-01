@@ -51,6 +51,7 @@
                                         <?php echo $row['deskripsi_menu'] ?>
                                     </p>
                                 </td>
+<<<<<<< HEAD
                                 <form method="POST">
                                 <td>
                                         <div class="jumlah col-3">
@@ -58,6 +59,13 @@
                                             <input class="form-control" id="inputjumlahmenu" type="username" name="jumlahmenu"/>
                                             <input class="form-control" type="hidden" name="idmenu" 
                                             value="<?php echo $row['id_menu'] ?>"/>
+=======
+                                <td> 
+                                    <form>
+                                        <div class="jumlah col-7">
+                                            <label for="jumlahmenu" class="form-label">Jumlah</label>
+                                            <input class="form-control" id="inputjumlahmenu" type="number" min="0" max="20" name="jumlahmenu"/>
+>>>>>>> 948e3549e465b4f8212af1314ab12edaaf26194c
                                         </div>
                                     
                                 </td>
