@@ -74,6 +74,11 @@
                         <!-- bbtn kembali -->
                         <button class="btn btn-secondary" type="submit">Kembali</button>
                     </div>
+                    <footer>
+                        <div class="text-center p-3">
+                             
+                        </div>
+                    </footer>
                 </main>
             </div>
         </div>

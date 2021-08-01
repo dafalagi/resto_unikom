@@ -68,6 +68,11 @@
                             <button class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#modalpesan">Pesan</button>
                         </div>
                     </div>
+                    <footer>
+                        <div class="text-center p-3">
+                             
+                        </div>
+                    </footer>
                 </main>
             </div>
         </div>
