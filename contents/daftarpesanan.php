@@ -102,7 +102,7 @@
                         </nav> -->
                         <!--close pagination-->
                         <!-- bbtn kembali -->
-                        <button class="btn btn-secondary" type="submit">Kembali</button>
+                        <a href="home.php" class="btn btn-secondary" type="submit">Kembali</a>
                     </div>
                 </main>
             </div>
