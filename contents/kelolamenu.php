@@ -32,7 +32,7 @@
                     <!--atas tabel-->
                     <nav class="navbar">
                             <div class="container-fluid">
-                                <button class="btn btn-dark me-2" type="button" data-bs-toggle="modal" data-bs-target="#tambahmenu">Tambah</button>
+                                <button class="btn btn-dark me-2" type="button" data-bs-toggle="modal" data-bs-target="#tambahmenu">Tambah Menu</button>
                                 <form class="d-flex" method="POST">
                                 <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search"
                                 name="nama_menu">
@@ -88,7 +88,7 @@
                             </tbody>
                         </table>
                         <!--close-->
-                        
+                        <button type="button" class="btn btn-secondary" name= "kembali">Kembali</button>
                     </div>
                 </main>
             </div>
