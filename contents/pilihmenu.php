@@ -44,7 +44,7 @@
                                     <form>
                                         <div class="jumlah col-7">
                                             <label for="jumlahmenu" class="form-label">Jumlah</label>
-                                            <input class="form-control" id="inputjumlahmenu" type="number" min="0" max="2" name="jumlahmenu"/>
+                                            <input class="form-control" id="inputjumlahmenu" type="number" min="0" max="20" name="jumlahmenu"/>
                                         </div>
                                     </form>
                                 </td>
