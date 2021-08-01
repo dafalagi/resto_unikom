@@ -29,7 +29,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary" name="tambah">Ya</button>
+        <a href="home.php?logout=true" type="button" class="btn btn-primary" name="pesan">Ya</a>
       </div>
     </div>
   </div>

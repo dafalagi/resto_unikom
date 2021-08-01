@@ -28,18 +28,31 @@
                                 </tr>
                             </thead>
                             <!-- body tabel -->
+                                <?php
+                                    $result = $bayarObj->siapBayar();
+                                    while ($row = $result->fetch_assoc()) {
+                                        $nomeja = $row['nomor_meja'];
+                                ?>
                                 <tbody>
                                     <tr>
-                                        <td class="align-top">Nomor Meja 1</td>
+                                        <td class="align-top">Nomor Meja <?php echo $nomeja ?></td>
                                         <td class="align-top" style="padding-left: 50px;"> 
-                                            <p>Bebek Bakar<br>
-                                                Ayam Bakar</p>
+                                        <?php
+                                            $data = $bayarObj->getNamaJumlah($nomeja);
+                                            while ($row2 = $data->fetch_assoc()) {
+                                        ?>
+                                            <p><?php echo $row2['nama_menu'] ?><br></p>
+                                            <?php } ?>
                                         </td>
                                         <td class="align-top"> 
+                                        <?php
+                                            $data = $bayarObj->getNamaJumlah($nomeja);
+                                            while ($row2 = $data->fetch_assoc()) {
+                                        ?>
                                             <p> 
-                                                2 <br>
-                                                2
+                                                <?php echo $row2['jumlah'] ?> <br>
                                             </p>
+                                            <?php } ?>
                                         </td>
                                         <td class="align-middle" style="padding-left: 10px;">
                                             <div class="d-grid gap-2 col-9">
@@ -50,29 +63,12 @@
                                             </div>
                                         </td>
                                     </tr> 
-                                    <tr>
-                                        <td class="align-top">Nomor Meja 2</td>
-                                        <td class="align-top" style="padding-left: 50px;"> 
-                                            <p>Bebek Bakar<br>
-                                                Ayam Bakar</p>
-                                        </td>
-                                        <td class="align-top"> 
-                                            <p> 
-                                                2 <br>
-                                                2
-                                            </p>
-                                        </td>
-                                        <td class="align-middle" style="padding-left: 10px;">
-                                            <div class="d-grid gap-2 col-9">
-                                            <a class="btn btn-primary" type="button" href="home.php?nav=<?php echo $konfirmasibayar ?>">Proses</a>
-                                            </div>
-                                        </td>
-                                    </tr> 
                                 </tbody>
+                                <?php } ?>
                         </table>
                         </div>
                         <!-- bbtn kembali -->
-                        <button class="btn btn-secondary" type="submit">Kembali</button>
+                        <a href="home.php" class="btn btn-secondary" type="submit">Kembali</a>
                     </div>
                     <footer>
                         <div class="text-center p-3">

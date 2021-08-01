@@ -24,17 +24,22 @@
             return $result;
         }
 
-        public function generatePesanan() {
-            $sql = "INSERT INTO t_pesanan (nipr)
-                    VALUES (11)";
+        public function generatePesanan($meja) {
+            $sql = "SELECT * FROM t_pelayan LIMIT 1";
             $result = $this->conn->query($sql);
+            $row = $result->fetch_assoc();
+            $nipr = $row['nipr'];
 
-            if ($result == true) {
-                $sql2 = "SELECT id_pesanan FROM t_pesanan ORDER BY id_pesanan DESC LIMIT 1";
-                $result2 = $this->conn->query($sql2);
+            $sql2 = "INSERT INTO t_pesanan (nipr,nomor_meja)
+                    VALUES ('$nipr','$meja')";
+            $result2 = $this->conn->query($sql2);
 
-                if ($result2->num_rows == 1) {
-                    return $result2;
+            if ($result2 == true) {
+                $sql3 = "SELECT id_pesanan FROM t_pesanan ORDER BY id_pesanan DESC LIMIT 1";
+                $result3 = $this->conn->query($sql3);
+
+                if ($result3->num_rows == 1) {
+                    return $result3;
                 }
             }
         }
@@ -93,6 +98,38 @@
             $sql = "UPDATE t_pesanan
                     SET konfirmasi='ya', total_harga='$total'
                     WHERE id_pesanan='$id'";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function statusAntrian() {
+            $sql = "SELECT * FROM t_pesanan WHERE status_pesanan NOT IN 
+                    (SELECT status_pesanan FROM t_pesanan WHERE status_pesanan='disajikan' OR status_pesanan='selesai')";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function getNamaJumlah3($meja) {
+            $sql = "SELECT t_menu.`nama_menu`, t_detail_pesanan.`jumlah` 
+                    FROM t_menu INNER JOIN t_detail_pesanan INNER JOIN t_pesanan
+                    ON t_menu.`id_menu`=t_detail_pesanan.`id_menu` AND t_pesanan.`id_pesanan`=t_detail_pesanan.`id_pesanan`
+                    WHERE t_pesanan.`nomor_meja`=$meja AND t_pesanan.status_pesanan='antrian'";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function statusDibuat($id) {
+            $sql = "UPDATE t_pesanan SET status_pesanan='dibuat' WHERE id_pesanan='$id'";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function statusSelesai($id) {
+            $sql = "UPDATE t_pesanan SET status_pesanan='selesai' WHERE id_pesanan='$id'";
             $result = $this->conn->query($sql);
 
             return $result;

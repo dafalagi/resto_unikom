@@ -21,5 +21,20 @@
 
             return $result;
         }
+
+        public function pesanMenu($menu, $id_pesanan) {
+            $id_menu = $_POST['idmenu'];
+            $jumlah = $_POST['jumlahmenu'];
+            
+            $sql = "SELECT harga_menu FROM t_menu WHERE id_menu='$id_menu'";
+            $result = $this->conn->query($sql);
+            $row = $result->fetch_assoc();
+
+            $subtotal = (int)$jumlah * (int)$row['harga_menu'];
+
+            $sql2 = "INSERT INTO t_detail_pesanan (id_menu, id_pesanan, jumlah, sub_total)
+                    VALUES ('$id_menu','$id_pesanan','$jumlah','$subtotal')";
+            $result2 = $this->conn->query($sql2);
+        }
     }
 ?>

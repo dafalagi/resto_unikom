@@ -1,4 +1,16 @@
-<?php include_once('layouts/head.php') ?>   
+<?php
+    include_once('layouts/head.php');
+
+    if(isset($_POST['pilih'])) {
+        if (!isset($_SESSION['idpesanan'])) {
+            $data = $pesananObj->generatePesanan($_SESSION['nomeja']);
+            $row = $data->fetch_assoc();
+            $_SESSION['idpesanan'] = $row['id_pesanan'];
+        }
+
+        $detailObj->pesanMenu($_POST,$_SESSION['idpesanan']);
+    }
+?>   
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css">
@@ -10,7 +22,7 @@
             include_once('components/navbar.php');
             include_once('components/sidenav.php');
         ?>
-
+            
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -30,7 +42,6 @@
                                 $no = 1;
                                 while ($row = $menu->fetch_assoc()) {
                             ?>
-
                             <tbody>
                                 <tr>
                                 <th scope="row" class="align-middle"><?php echo $no ?></th>
@@ -40,20 +51,23 @@
                                         <?php echo $row['deskripsi_menu'] ?>
                                     </p>
                                 </td>
-                                <td> 
-                                    <form>
+                                <form method="POST">
+                                <td>
                                         <div class="jumlah col-3">
                                             <label for="jumlahmenu" class="form-label">Jumlah</label>
                                             <input class="form-control" id="inputjumlahmenu" type="username" name="jumlahmenu"/>
+                                            <input class="form-control" type="hidden" name="idmenu" 
+                                            value="<?php echo $row['id_menu'] ?>"/>
                                         </div>
-                                    </form>
+                                    
                                 </td>
                                 <td class="align-middle">
                                     <div class="d-grid gap-2 col-3">
-                                        <button class="btn btn-primary" type="submit" name="" onclick="return alert('Permintaan anda berhasil diproses');">Pilih</button>
+                                        <button class="btn btn-primary" type="submit" name="pilih" onclick="return alert('Permintaan anda berhasil diproses');">Pilih</button>
                                         <button class="btn btn-secondary" type="button">Batal</button>
                                     </div>
                                 </td>
+                                </form>
                                 </tr>
                             </tbody>
                             <?php
@@ -76,6 +90,7 @@
                 </main>
             </div>
         </div>
+            </form>
 
         <?php 
             include_once('components/modal/modalpilihmenu.php'); 

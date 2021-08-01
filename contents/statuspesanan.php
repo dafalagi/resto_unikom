@@ -1,4 +1,15 @@
-<?php include_once('layouts/head.php') ?>   
+<?php
+    include_once('layouts/head.php');
+
+    if (isset($_GET['dibuat'])) {
+        $id = base64_url_decode($_GET['id']);
+        $pesananObj->statusDibuat($id);
+    }
+    if (isset($_GET['selesai'])) {
+        $id = base64_url_decode($_GET['id']);
+        $pesananObj->statusSelesai($id);
+    }
+?>   
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css">
@@ -26,46 +37,50 @@
             </tr>
         </thead>
         <!-- body tabel -->
-            <tbody>
+        <?php
+            $result = $pesananObj->statusAntrian();
+            while ($row = $result->fetch_assoc()) {
+        ?>
+        <tbody>
         <!-- tabel 1 -->
                 <tr>
-                    <td class="align-top">Nomor Meja 1</td>
-                    <td class="align-top" style="padding-left: 50px;"> 
-                        <p>Bebek Bakar<br>
-                            Ayam Bakar</p>
+                    <td class="align-top">Nomor Meja <?php echo $row['nomor_meja'] ?></td>
+                    <td class="align-top" style="padding-left: 50px;">
+                    <?php
+                        $data = $pesananObj->getNamaJumlah3($row['nomor_meja']);
+                        while ($row2 = $data->fetch_assoc()) {
+                    ?> 
+                        <p><?php echo $row2['nama_menu'] ?><br>
+                            </p>
+                            <?php } ?>
                     </td>
                     <td class="align-top"> 
+                    <?php
+                        $data = $pesananObj->getNamaJumlah3($row['nomor_meja']);
+                        while ($row2 = $data->fetch_assoc()) {
+                    ?> 
                         <p> 
-                            2 <br>
-                            2
+                            <?php echo $row2['jumlah'] ?> <br>
                         </p>
+                        <?php } ?>
                     </td>
                     <td class="align-middle" style="padding-left: 10px;">
                         <div class="d-grid gap-2 col-10">
-                            <button class="btn btn-primary" type="submit" name="" onclick="return alert('Permintaan anda berhasil diproses');">Dibuat</button>
-                            <button class="btn btn-secondary" type="submit" name="" onclick="return alert('Permintaan anda berhasil diproses');">Selesai</button>
+                            <?php
+                                $status = base64_url_encode("status");
+                                $id = base64_url_encode($row['id_pesanan']);
+                            ?>
+                            <a href="home.php?nav=<?php echo $status ?>&id=<?php echo $id ?>&dibuat=true" 
+                            class="btn btn-primary" type="button" name="" onclick="return alert('Permintaan anda berhasil diproses');">Dibuat</a>
+                            <a href="home.php?nav=<?php echo $status ?>&id=<?php echo $id ?>&selesai=true"
+                            class="btn btn-secondary" type="button" name="" onclick="return alert('Permintaan anda berhasil diproses');">Selesai</a>
                         </div>
                     </td>
                 </tr> 
-        <!-- tabel 2 -->
-                <tr>
-                    <td class="align-top">Nomor Meja 2</td>
-                    <td class="align-top" style="padding-left: 50px;"> 
-                        <p>Bebek Bakar<br>
-                            Ayam Bakar</p>
-                    </td>
-                    <td class="align-top"> 
-                        <p> 
-                            2 <br>
-                            2
-                        </p>
-                    </td>
-                    <td class="align-middle" style="padding-left: 10px;">
-                        <div class="d-grid gap-2 col-10">
-                            <a class="btn btn-primary" type="button" onclick="return alert('Permintaan anda berhasil diproses');">Dibuat</a>
-                            <a class="btn btn-secondary" type="button" onclick="return alert('Permintaan anda berhasil diproses');">Selesai</a>
-                        </div>
             </tbody>
+            <?php
+            }
+            ?>
     </table>
 </div>
 <a class="btn btn-secondary" href="#" role="button">Kembali</a>
