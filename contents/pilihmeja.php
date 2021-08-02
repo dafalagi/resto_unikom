@@ -82,6 +82,7 @@
             </div>
             <?php    } ?>
         </div> <?php } ?>
+        <button type="button" class="btn btn-secondary" name= "kembali">Kembali</button>
           </div>
     <!-- akhir list meja -->
     

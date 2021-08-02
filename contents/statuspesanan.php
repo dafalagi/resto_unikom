@@ -83,7 +83,7 @@
             ?>
     </table>
 </div>
-<a class="btn btn-secondary" href="#" role="button">Kembali</a>
+<a class="btn btn-secondary" href="home.php" role="button">Kembali</a>
         <footer>
             <div class="text-center p-3">
                                       
