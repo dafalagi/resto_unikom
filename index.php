@@ -58,7 +58,7 @@
           data-aos-delay="1500"
           href="index.php?nomeja=<?php echo $meja ?>"
         >
-          Mulai
+          Masuk
         </a>
       </div>
     </div>

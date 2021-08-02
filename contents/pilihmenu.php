@@ -53,9 +53,9 @@
                                 </td>
                                 <form method="POST">
                                 <td>
-                                        <div class="jumlah col-3">
+                                        <div class="jumlah col-8">
                                             <label for="jumlahmenu" class="form-label">Jumlah</label>
-                                            <input class="form-control" id="inputjumlahmenu" type="username" name="jumlahmenu"/>
+                                            <input class="form-control" id="inputjumlahmenu" type="number" min="0" max="99" name="jumlahmenu"/>
                                             <input class="form-control" type="hidden" name="idmenu" 
                                             value="<?php echo $row['id_menu'] ?>"/>
                                         </div>
