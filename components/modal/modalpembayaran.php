@@ -44,7 +44,7 @@
         </table>
         <div class="row">
             <div class="col-8">Total : </div>
-            <div class="col-4">Rp. 120.000</div>
+            <div class="col-4">Rp. 128.000</div>
         </div>
       </div>
       <div class="modal-footer justify-content-end">

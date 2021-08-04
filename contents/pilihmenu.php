@@ -77,8 +77,7 @@
                         </table>
                         <!-- btn pesan dan kembali -->
                     <div class="tombol">
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a class="btn btn-secondary" href="" role="button">Kembali</a>
+                        <div class="d-grid justify-content-md-end">
                             <button class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#modalpesan">Pesan</button>
                         </div>
                     </div>

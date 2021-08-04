@@ -13,60 +13,53 @@
 
             <div id="layoutSidenav_content">
                 <main>
-                    <!-- button -->
-                    <div class="container-fluid px-4">
-                    <div class="tombolatas d-grid col-2">
-                        <button type="button" class="btn btn-primary btn-lg">CARD</button>
-                    </div>
-                    <!-- card -->
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Non-Tunai</h5>
-                                    <label for="namapemilik">Nama Pemilik Kartu</label>
-                                    <input class="form-control" type="text" placeholder="Nama" aria-label=".form-control-sm example">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label for="nomorkartu">Nomor Kartu</label>
-                                            <input class="form-control" type="text" placeholder="Nama" aria-label=".form-control-sm example">
-                                        </div>
-                                        <div class="col">
-                                            <label for="expired">Expired</label>
-                                            <input class="form-control" type="text" placeholder="Nama" aria-label=".form-control-sm example">
-                                        </div>
-                                    </div> 
-                                    <label for="cvc">CVC</label>
-                                    <input class="form-control" type="text" placeholder="Nama" aria-label=".form-control-sm example">
-                            </div>
-                            </div>
-                        </div>
-                        <!-- xxxx -->
-                        <div class="col-sm-4">
+                    <!-- Summary -->
+                    <div>
+                        <!-- Main -->
+                        <div class="col-md-6 offset-md-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Summary</h5>
-
+                                    <h5 class="card-title offset-md-2">Summary</h5>
                                     <div class="container text-center">
-                                        <div class="row">
-                                            <div class="col">
+                                        <br>
+                                        <div class="row gx-1 "> 
+                                            <div class="col-md-6">
                                                 Nama <br>
                                                 Ayam Bakar <br>
                                                 Bebek Bakar
                                             </div>
-                                            <div class="col">
+                                            <div class="col-md-6">
                                                 Harga <br>
                                                 64000 <br>
                                                 64000
                                             </div>
                                         </div>
+                                        <br>
+                                        <div class="row gx-1 "> 
+                                            <div class="col-md-6">
+                                                Total <br>
+                                                Total Bayar <br><br>
+                                                Kembalian
+                                            </div>
+                                            <div class="col-md-6">
+                                            128.000
+                                                <div>
+                                                    <input class="field1" type="Number" id="###" class="form-control">
+                                                </div>
+                                                <br>
+                                                <div>
+                                                    <input class="field2" type="Number" id="###" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>          
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Button -->
-                    <div class="tombol">
+                    <br>
+                    <div class="col-md-6 offset-md-3">
                         <button class="btn btn-secondary" type="#">Kembali</button>
                         <button class="btn btn-primary" type="submit"  data-bs-toggle="modal" data-bs-target="#modalstruk">Bayar</button>
                     </div>
