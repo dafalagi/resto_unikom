@@ -32,6 +32,7 @@
                                     $result = $bayarObj->siapBayar();
                                     while ($row = $result->fetch_assoc()) {
                                         $nomeja = $row['nomor_meja'];
+                                        $idpesanan = $row['id_pesanan'];
                                 ?>
                                 <tbody>
                                     <tr>
@@ -57,9 +58,11 @@
                                         <td class="align-middle" style="padding-left: 10px;">
                                             <div class="d-grid gap-2 col-9">
                                                 <?php
-                                                    $konfirmasibayar = base64_url_encode("konfirmasibayar")
+                                                    $konfirmasibayar = base64_url_encode("konfirmasibayar");
+                                                    $id = base64_url_encode($idpesanan);
                                                 ?>
-                                                <a class="btn btn-primary" type="button" href="home.php?nav=<?php echo $konfirmasibayar ?>">Proses</a>
+                                                <a class="btn btn-primary" type="button" 
+                                                href="home.php?nav=<?php echo $konfirmasibayar ?>&id=<?php echo $id ?>">Proses</a>
                                             </div>
                                         </td>
                                     </tr> 

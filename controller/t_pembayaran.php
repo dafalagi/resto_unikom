@@ -31,5 +31,34 @@
 
             return $result;
         }
+
+        public function getSum($id) {
+            $sql = "SELECT SUM(sub_total) AS total FROM t_detail_pesanan WHERE id_pesanan='$id'";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+        
+        public function getBayar($id) {
+            $sql = "SELECT * FROM t_pembayaran AS a INNER JOIN t_pesanan AS b ON a.id_pesanan=b.id_pesanan
+                    WHERE b.id_pesanan='$id'";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function insertBayar($id,$total) {
+            $user = $_SESSION['user'];
+            $sql = "SELECT * FROM t_kasir WHERE username='$user'";
+            $result = $this->conn->query($sql);
+            if ($row = $result->fetch_assoc()) {
+                $nipr = $row['nipr'];
+                $sql = "INSERT INTO t_pembayaran (nipr,id_pesanan,total_tagihan,tipe_bayar,tanggal_pembayaran)
+                    VALUES ('$nipr','$id','$total','tunai',NOW())";
+                $result = $this->conn->query($sql);
+
+                return $result;
+            }
+        }
     }
 ?>

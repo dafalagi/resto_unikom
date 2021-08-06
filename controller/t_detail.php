@@ -36,5 +36,20 @@
                     VALUES ('$id_menu','$id_pesanan','$jumlah','$subtotal')";
             $result2 = $this->conn->query($sql2);
         }
+
+        public function getDetail($id) {
+            $sql = "SELECT * FROM t_detail_pesanan  AS a INNER JOIN t_menu AS b ON a.id_menu=b.id_menu
+                    WHERE id_pesanan='$id'";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function deleteDetail($id) {
+            $sql = "DELETE FROM t_detail_pesanan WHERE id_pesanan='$id'";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
     }
 ?>

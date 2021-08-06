@@ -13,8 +13,8 @@
             <input type="text" readonly class="form-control-plaintext" value="Bulan" aria-label="bulan">
         </div>
         <div class="col">
-            <input type="text" readonly class="form-control-plaintext" value="                                          
-                   Maret" aria-label="namabulan" name="cetak_bulan">
+            <input type="text" readonly class="form-control-plaintext" aria-label="namabulan" name="cetak_bulan"
+            id="hasil_bulan">
         </div>
       </div>
       <div class="mb-3 row">
@@ -25,8 +25,8 @@
             <input type="text" readonly class="form-control-plaintext" value="Tagihan Listrik" aria-label="tagihanlistrik">
         </div>
         <div class="col">
-            <input type="text" readonly class="form-control-plaintext" value="                                          
-                   Rp. 700.000" aria-label="jumlah" name="cetak_tagihan_listrik">
+            <input type="text" readonly class="form-control-plaintext" aria-label="jumlah" name="cetak_tagihan_listrik"
+            id="hasil_listrik">
         </div>
       </div>
       <div class="row">
@@ -34,8 +34,8 @@
             <input type="text" readonly class="form-control-plaintext" value="Tagihan PDAM" aria-label="tagihanpdam">
         </div>
         <div class="col">
-            <input type="text" readonly class="form-control-plaintext" value="                                          
-                   Rp. 850.000" aria-label="jumlah" name="cetak_tagihan_pdam">
+            <input type="text" readonly class="form-control-plaintext" aria-label="jumlah" name="cetak_tagihan_pdam"
+            id="hasil_pdam">
         </div>
       </div>
       <div class="row">
@@ -43,8 +43,8 @@
             <input type="text" readonly class="form-control-plaintext" value="Gaji Karyawan" aria-label="gajikaryawan">
         </div>
         <div class="col">
-            <input type="text" readonly class="form-control-plaintext" value="                                          
-                   Rp. 15.000.000" aria-label="jumlah" name="cetak_gaji">
+            <input type="text" readonly class="form-control-plaintext" aria-label="jumlah" name="cetak_gaji"
+            id="hasil_gaji">
         </div>
       </div>
       <div class="mb-3 row">
@@ -55,8 +55,8 @@
             <input type="text" readonly class="form-control-plaintext" value="Total Pendapatan" aria-label="totalpendapatan">
         </div>
         <div class="col">
-            <input type="text" readonly class="form-control-plaintext" value="                                          
-                   Rp. 2.000.000" aria-label="jumlah" name="cetak_total">
+            <input type="text" readonly class="form-control-plaintext" aria-label="jumlah" name="cetak_total"
+            id="hasil_total">
         </div>
       </div>
       <div class="row">
@@ -64,8 +64,8 @@
             <input type="text" readonly class="form-control-plaintext" value="Pendapatan Bersih" aria-label="pendapatan bersih">
         </div>
         <div class="col">
-            <input type="text" readonly class="form-control-plaintext" value="                                          
-                   Rp. 1.300.000" aria-label="jumlah" name="cetak_pendapatan">
+            <input type="text" readonly class="form-control-plaintext" aria-label="jumlah" name="cetak_pendapatan"
+            id="hasil_bersih">
         </div>
       </div>
       <div class="modal-footer">

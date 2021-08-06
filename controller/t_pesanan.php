@@ -17,7 +17,7 @@
 
         public function viewPesanan() {
             $sql = "SELECT * FROM t_pesanan WHERE status_pesanan 
-                    NOT IN (SELECT status_pesanan FROM t_pesanan WHERE status_pesanan='disajikan')
+                    NOT IN (SELECT status_pesanan FROM t_pesanan WHERE status_pesanan='disajikan' OR status_pesanan='dibayar')
                     ORDER BY status_pesanan DESC";
             $result = $this->conn->query($sql);
 
@@ -105,7 +105,8 @@
 
         public function statusAntrian() {
             $sql = "SELECT * FROM t_pesanan WHERE status_pesanan NOT IN 
-                    (SELECT status_pesanan FROM t_pesanan WHERE status_pesanan='disajikan' OR status_pesanan='selesai')";
+                    (SELECT status_pesanan FROM t_pesanan WHERE status_pesanan='disajikan' OR status_pesanan='selesai'
+                    OR status_pesanan='dibayar')";
             $result = $this->conn->query($sql);
 
             return $result;
@@ -130,6 +131,13 @@
 
         public function statusSelesai($id) {
             $sql = "UPDATE t_pesanan SET status_pesanan='selesai' WHERE id_pesanan='$id'";
+            $result = $this->conn->query($sql);
+
+            return $result;
+        }
+
+        public function statusDibayar($id) {
+            $sql = "UPDATE t_pesanan SET status_pesanan='dibayar' WHERE id_pesanan='$id'";
             $result = $this->conn->query($sql);
 
             return $result;

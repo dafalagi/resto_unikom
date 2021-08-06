@@ -23,7 +23,7 @@
                     <div class="mb-3 row">
                         <label for="pilihbulan" class="col-sm-2 col-form-label">Bulan </label>
                             <div class="col-sm-10">
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" id="bulan">
                                 <option selected>-Pilih-</option>
                                 <option value="1">Januari</option>
                                 <option value="2">Februari</option>
@@ -52,7 +52,7 @@
                     <div class="mb-3 row">
                         <label for="inputtagihanpdam" class="col-sm-2 col-form-label">Tagihan PDAM </label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="taggihanpdam" name="tagihan_pdam">
+                        <input type="text" class="form-control" id="tagihanpdam" name="tagihan_pdam">
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -78,7 +78,8 @@
                     </div>
                     <div class="text-center">
                     <a class="btn btn-secondary" href="home.php" data-bs-dismiss="modal">Batal</a>
-                    <button type="button" class="btn btn-primary" name="tambah" type="button" data-bs-toggle="modal" data-bs-target="#cetaklaporan">Buat</button>
+                    <button type="button" class="btn btn-primary" name="tambah" type="button" data-bs-toggle="modal" data-bs-target="#cetaklaporan"
+                    onclick="buat_laporan()">Buat</button>
                     </div>
                     </div>
                     <!--close card-->
@@ -88,9 +89,37 @@
                 </main>
             </div>
         </div>
+        
 
         <?php
             include_once('components/modal/modallaporan.php'); 
+        ?>
+
+        <script>
+            function buat_laporan() {
+                var bulan = document.getElementById("bulan");
+                var listrik = document.getElementById("tagihanlistrik");
+                var pdam = document.getElementById("tagihanpdam");
+                var gaji = document.getElementById("gajikaryawan");
+                var total = document.getElementById("totalpendapatan");
+                var bersih = document.getElementById("pendapatanbersih");
+                var bulan2 = document.getElementById("hasil_bulan");
+                var listrik2 = document.getElementById("hasil_listrik");
+                var pdam2 = document.getElementById("hasil_pdam");
+                var gaji2 = document.getElementById("hasil_gaji");
+                var total2 = document.getElementById("hasil_total");
+                var bersih2 = document.getElementById("hasil_bersih");
+
+                bulan2.value = bulan.value;
+                listrik2.value = listrik.value;
+                pdam2.value = pdam.value;
+                gaji2.value = gaji.value;
+                total2.value = total.value;
+                bersih2.value = bersih.value;
+            }
+        </script>
+
+        <?php
             include_once('layouts/scripts.php');
             include_once('layouts/end.php');
         ?>

@@ -20,6 +20,7 @@
             $password = htmlspecialchars($_POST['password']);
 
             if (!empty($username || !empty($password))) {
+                $sql = "";
                 if (str_contains($password, 'pelayan') !== false) {
                     $sql = "SELECT * FROM t_pelayan WHERE username='$username'";
                 }else if (str_contains($password, 'kasir') !== false) {

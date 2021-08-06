@@ -50,6 +50,8 @@
             include_once('contents/daftarpesanan.php');
         }else if ($nav == "konfirmasibayar") {
             include_once('contents/konfirmasipembayaran.php');
+        }else if ($nav == "selesaibayar") {
+            include_once('contents/selesaibayar.php');
         }
     }else {
         include_once('contents/beranda.php');
