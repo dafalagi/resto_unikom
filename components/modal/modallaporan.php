@@ -68,9 +68,6 @@
             id="hasil_bersih">
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" name="cetak">Cetak</button>
-      </div>
     </div>
   </div>
 </div>
