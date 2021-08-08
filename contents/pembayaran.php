@@ -39,19 +39,19 @@
                                         <td class="align-top">Nomor Meja <?php echo $nomeja ?></td>
                                         <td class="align-top" style="padding-left: 50px;"> 
                                         <?php
-                                            $data = $bayarObj->getNamaJumlah($nomeja);
-                                            while ($row2 = $data->fetch_assoc()) {
+                                            $data = $bayarObj->getNamaJumlah($idpesanan);
+                                            while ($row = mysqli_fetch_array($data)) {
                                         ?>
-                                            <p><?php echo $row2['nama_menu'] ?><br></p>
+                                            <p><?php echo $row['nama_menu'] ?><br></p>
                                             <?php } ?>
                                         </td>
                                         <td class="align-top"> 
                                         <?php
-                                            $data = $bayarObj->getNamaJumlah($nomeja);
-                                            while ($row2 = $data->fetch_assoc()) {
+                                            $data = $bayarObj->getNamaJumlah($idpesanan);
+                                            while ($row = mysqli_fetch_array($data)) {
                                         ?>
                                             <p> 
-                                                <?php echo $row2['jumlah'] ?> <br>
+                                                <?php echo $row['jumlah'] ?> <br>
                                             </p>
                                             <?php } ?>
                                         </td>

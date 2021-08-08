@@ -2,8 +2,27 @@
     include_once('layouts/head.php');
 
     $idpesanan = "";
-    if(isset($_GET['id'])) {
+    if (isset($_GET['id'])) {
         $idpesanan = base64_url_decode($_GET['id']);
+    }
+
+    if (isset($_POST['bayar'])) {
+        $idpesanan = $_POST['id_pesanan'];
+        $total = $_POST['total'];
+        $result = $bayarObj->insertBayar($idpesanan,$total);
+        if ($result == true) {
+            $result = $bayarObj->getBayar($idpesanan);
+            $row = $result->fetch_assoc();
+            $nomeja = $row['nomor_meja'];
+            if ($result->num_rows == 1) {
+                $pesananObj->statusDibayar($idpesanan);
+                $mejaObj->statusTersedia($nomeja);
+                $detailObj->deleteDetail($idpesanan);
+                $pembayaran = base64_url_encode("pembayaran");
+                header('Location: home.php?nav='.$pembayaran, true, 301);
+                exit();
+            }
+        }
     }
 ?>   
     
@@ -53,18 +72,19 @@
                                         <br>
                                         <div class="row gx-1 "> 
                                             <div class="col-md-6">
-                                                Total <br>
+                                                Total <br><br>
                                                 Total Bayar <br><br>
                                                 Kembalian
                                             </div>
                                             <div class="col-md-6">
-                                            <?php echo $total ?>
+                                            <p> <?php echo $total ?> </p>
+                                            <input type="hidden" id="tagihan" value="<?php echo $total ?>" >
                                                 <div>
-                                                    <input class="field1" type="Number" id="###" class="form-control">
+                                                    <input class="field1" type="Number" id="bayar" class="form-control">
                                                 </div>
                                                 <br>
                                                 <div>
-                                                    <input class="field2" type="Number" id="###" class="form-control">
+                                                    <input class="field2" type="Number" id="kembali" class="form-control">
                                                 </div>
                                             </div>
                                         </div>          
@@ -75,21 +95,36 @@
                     </div>
                     <!-- Button -->
                     <br>
+                    <form method="POST">
                     <div class="col-md-6 offset-md-3">
-                        <button class="btn btn-secondary" type="#">Kembali</button>
-                        <?php
-                            $selesaibayar = base64_url_encode("selesaibayar");
-                            $id = base64_url_encode($idpesanan);
-                        ?>
-                        <a href="home.php?nav=<?php echo $selesaibayar ?>&id=<?php echo $id ?>" 
-                        class="btn btn-primary" type="button">Bayar</a>
+                        <?php $pembayaran = base64_url_encode("pembayaran") ?>
+                        <a href="home.php?nav=<?php echo $pembayaran ?>" class="btn btn-secondary" type="#">Kembali</a>
+                        <input type="hidden" name="id_pesanan" value="<?php echo $idpesanan ?>">
+                        <input type="hidden" name="total" value="<?php echo $total ?>">
+                        <button class="btn btn-primary" type="submit" name="bayar">Bayar</button>
                     </div>
+                    </form>
                 </main>
             </div>
         </div>
 
         <?php
-            include_once('components/modal/modalpembayaran.php'); 
+            include_once('components/modal/modalpembayaran.php');
             include_once('layouts/scripts.php');
-            include_once('layouts/end.php');
+        ?>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#tagihan, #bayar").keyup(function() {
+                    var total_harga  = $("#tagihan").val();
+                    var total_bayar = $("#bayar").val();
+                
+                    var total = parseInt(total_bayar) - parseInt(total_harga);
+                    $("#kembali").val(total);
+                });
+            });
+        </script>
+
+        <?php 
+            include_once('layouts/end.php')
         ?>

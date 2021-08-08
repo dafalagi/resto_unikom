@@ -19,6 +19,7 @@
         $nomeja = $row['nomor_meja'];
         if ($result->num_rows == 1) {
             $pesananObj->statusDibayar($idpesanan);
+            $mejaObj->statusTersedia($nomeja);
         }
     }
 ?>

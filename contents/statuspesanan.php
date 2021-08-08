@@ -47,7 +47,7 @@
                     <td class="align-top">Nomor Meja <?php echo $row['nomor_meja'] ?></td>
                     <td class="align-top" style="padding-left: 50px;">
                     <?php
-                        $data = $pesananObj->getNamaJumlah3($row['nomor_meja']);
+                        $data = $pesananObj->getNamaJumlah($row['id_pesanan']);
                         while ($row2 = $data->fetch_assoc()) {
                     ?> 
                         <p><?php echo $row2['nama_menu'] ?><br>
@@ -56,7 +56,7 @@
                     </td>
                     <td class="align-top"> 
                     <?php
-                        $data = $pesananObj->getNamaJumlah3($row['nomor_meja']);
+                        $data = $pesananObj->getNamaJumlah($row['id_pesanan']);
                         while ($row2 = $data->fetch_assoc()) {
                     ?> 
                         <p> 
@@ -69,9 +69,10 @@
                             <?php
                                 $status = base64_url_encode("status");
                                 $id = base64_url_encode($row['id_pesanan']);
+                                $status_now = $row['status_pesanan'];
                             ?>
                             <a href="home.php?nav=<?php echo $status ?>&id=<?php echo $id ?>&dibuat=true" 
-                            class="btn btn-primary" type="button" name="" onclick="return alert('Permintaan anda berhasil diproses');">Dibuat</a>
+                            class="btn btn-primary <?php if ($status_now == "dibuat") {echo "disabled";} ?>" type="button" name="" onclick="return alert('Permintaan anda berhasil diproses');">Dibuat</a>
                             <a href="home.php?nav=<?php echo $status ?>&id=<?php echo $id ?>&selesai=true"
                             class="btn btn-secondary" type="button" name="" onclick="return alert('Permintaan anda berhasil diproses');">Selesai</a>
                         </div>

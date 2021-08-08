@@ -21,11 +21,11 @@
 
             if (!empty($username || !empty($password))) {
                 $sql = "";
-                if (str_contains($password, 'pelayan') !== false) {
+                if (strpos($password, 'pelayan') !== false) {
                     $sql = "SELECT * FROM t_pelayan WHERE username='$username'";
-                }else if (str_contains($password, 'kasir') !== false) {
+                }else if (strpos($password, 'kasir') !== false) {
                     $sql = "SELECT * FROM t_kasir WHERE username='$username'";
-                }else if (str_contains($password, 'koki') !== false) {
+                }else if (strpos($password, 'koki') !== false) {
                     $sql = "SELECT * FROM t_koki WHERE username='$username'";
                 }
                 $result = $this->conn->query($sql);
@@ -70,13 +70,13 @@
             }else if (strlen($password) < 6) {
                 return $errMsg = "Password should be 6 digits";
             }else {
-                if (str_contains($password, 'pelayan') !== false) {
+                if (strpos($password, 'pelayan') !== false) {
                     $sql2 = "INSERT INTO t_pelayan (username,password,nama,jam_kerja,gaji) 
                             VALUES ('$username','$password','$nama','$jamkerja','$gaji')";
-                }else if (str_contains($password, 'kasir') !== false) {
+                }else if (strpos($password, 'kasir') !== false) {
                     $sql2 = "INSERT INTO t_kasir (username,password,nama,jam_kerja,gaji) 
                             VALUES ('$username','$password','$nama','$jamkerja','$gaji')";
-                }else if (str_contains($password, 'koki') !== false) {
+                }else if (strpos($password, 'koki') !== false) {
                     $sql2 = "INSERT INTO t_koki (username,password,nama,jam_kerja,gaji) 
                             VALUES ('$username','$password','$nama','$jamkerja','$gaji')";
                 }

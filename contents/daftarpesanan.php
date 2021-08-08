@@ -1,8 +1,8 @@
 <?php 
     include_once('layouts/head.php'); 
     if (isset($_GET['status'])) {
-        $nomeja = base64_url_decode($_GET['status']);
-        $pesananObj->gantiStatus($nomeja);
+        $id = base64_url_decode($_GET['status']);
+        $pesananObj->gantiStatus($id);
     }
 ?>   
     
@@ -50,7 +50,7 @@
                                         <?php ?>
                                         <td class="align-top">
                                             <?php
-                                                $menu = $pesananObj->getNamaJumlah($pRow['nomor_meja']);
+                                                $menu = $pesananObj->getNamaJumlah($pRow['id_pesanan']);
                                                 $nomeja = $pRow['nomor_meja'];
                                                 while ($mRow = $menu->fetch_assoc()) {
                                                     echo "<p>".$mRow['nama_menu']."</p>";
@@ -59,7 +59,7 @@
                                         </td>
                                         <td class="align-top"> 
                                             <?php
-                                                $menu = $pesananObj->getNamaJumlah($pRow['nomor_meja']);
+                                                $menu = $pesananObj->getNamaJumlah($pRow['id_pesanan']);
                                                 while ($mRow = $menu->fetch_assoc()) {
                                                     echo "<p>".$mRow['jumlah']."</p>";
                                                 }
@@ -72,10 +72,10 @@
                                             <div>
                                                 <?php 
                                                     $daftarpesanan = base64_url_encode("daftarpesanan");
-                                                    $nomeja = base64_url_encode($pRow['nomor_meja']);
+                                                    $id = base64_url_encode($pRow['id_pesanan']);
                                                 ?>
                                                 <a href="home.php?nav=<?php echo $daftarpesanan ?>
-                                                &status=<?php echo $nomeja ?>" 
+                                                &status=<?php echo $id ?>" 
                                                 class="btn btn-primary" type="button">Disajikan</a>
                                             </div>
                                         </td>

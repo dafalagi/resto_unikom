@@ -12,7 +12,9 @@
   }
   if (isset($_GET['nomeja']) && $_GET['nomeja'] !== "") {
     $data = $mejaObj->viewMeja($_GET['nomeja']);
-    if ($data->num_rows == 1) {
+    $row = $data->fetch_assoc();
+    $status = $row['status_meja'];
+    if ($data->num_rows == 1 && $status == "terisi") {
       $_SESSION['user'] = $_GET['nomeja'];
       $_SESSION['nomeja'] = $_GET['nomeja'];
       header('location:home.php', true, 301);

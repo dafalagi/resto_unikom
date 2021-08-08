@@ -46,7 +46,7 @@
                                 </thead>
 
                                 <?php
-                                    $pesanan2 = $pesananObj->getNamaJumlah2($nomeja);
+                                    $pesanan2 = $pesananObj->getNamaJumlah($id);
 
                                     while ($row2 = $pesanan2->fetch_assoc()) {
                                         $nama = $row2['nama_menu'];

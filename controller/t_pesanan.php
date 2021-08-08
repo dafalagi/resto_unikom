@@ -44,20 +44,20 @@
             }
         }
 
-        public function getNamaJumlah($meja) {
-            $sql = "SELECT t_menu.`nama_menu`, t_detail_pesanan.`jumlah` 
+        public function getNamaJumlah($id) {
+            $sql = "SELECT * 
                     FROM t_menu INNER JOIN t_detail_pesanan INNER JOIN t_pesanan
                     ON t_menu.`id_menu`=t_detail_pesanan.`id_menu` AND t_pesanan.`id_pesanan`=t_detail_pesanan.`id_pesanan`
-                    WHERE t_pesanan.`nomor_meja`=$meja";
+                    WHERE t_pesanan.`id_pesanan`='$id'";
             $result = $this->conn->query($sql);
 
             return $result;
         }
 
-        public function gantiStatus($meja) {
+        public function gantiStatus($id) {
             $sql = "UPDATE t_pesanan
                     SET status_pesanan='disajikan'
-                    WHERE nomor_meja=$meja";
+                    WHERE id_pesanan=$id";
             $result = $this->conn->query($sql);
 
             return $result;
@@ -68,16 +68,6 @@
                     ON t_pesanan.id_pesanan=t_detail_pesanan.id_pesanan
                     WHERE konfirmasi='tidak'
                     GROUP BY nomor_meja";
-            $result = $this->conn->query($sql);
-
-            return $result;
-        }
-
-        public function getNamaJumlah2($meja) {
-            $sql = "SELECT t_menu.`nama_menu`, t_detail_pesanan.`jumlah`, t_menu.harga_menu 
-                    FROM t_menu INNER JOIN t_detail_pesanan INNER JOIN t_pesanan
-                    ON t_menu.`id_menu`=t_detail_pesanan.`id_menu` AND t_pesanan.`id_pesanan`=t_detail_pesanan.`id_pesanan`
-                    WHERE t_pesanan.`nomor_meja`='$meja'";
             $result = $this->conn->query($sql);
 
             return $result;
@@ -95,28 +85,23 @@
         public function konfirmasiYa($id) {
             $id = $_POST['id_pesanan'];
             $total = $_POST['total_harga'];
-            $sql = "UPDATE t_pesanan
-                    SET konfirmasi='ya', total_harga='$total'
-                    WHERE id_pesanan='$id'";
+            $user = $_SESSION['user'];
+            $sql = "SELECT * FROM t_pelayan WHERE username='$user'";
             $result = $this->conn->query($sql);
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                $nipr = $row['nipr'];
+                $sql = "UPDATE t_pesanan
+                        SET konfirmasi='ya', total_harga='$total', nipr='$nipr'
+                        WHERE id_pesanan='$id'";
+                $result = $this->conn->query($sql);
 
-            return $result;
+                return $result;
+            }
         }
 
         public function statusAntrian() {
-            $sql = "SELECT * FROM t_pesanan WHERE status_pesanan NOT IN 
-                    (SELECT status_pesanan FROM t_pesanan WHERE status_pesanan='disajikan' OR status_pesanan='selesai'
-                    OR status_pesanan='dibayar')";
-            $result = $this->conn->query($sql);
-
-            return $result;
-        }
-
-        public function getNamaJumlah3($meja) {
-            $sql = "SELECT t_menu.`nama_menu`, t_detail_pesanan.`jumlah` 
-                    FROM t_menu INNER JOIN t_detail_pesanan INNER JOIN t_pesanan
-                    ON t_menu.`id_menu`=t_detail_pesanan.`id_menu` AND t_pesanan.`id_pesanan`=t_detail_pesanan.`id_pesanan`
-                    WHERE t_pesanan.`nomor_meja`=$meja AND t_pesanan.status_pesanan='antrian'";
+            $sql = "SELECT * FROM t_pesanan WHERE status_pesanan='antrian' OR status_pesanan='dibuat'";
             $result = $this->conn->query($sql);
 
             return $result;
